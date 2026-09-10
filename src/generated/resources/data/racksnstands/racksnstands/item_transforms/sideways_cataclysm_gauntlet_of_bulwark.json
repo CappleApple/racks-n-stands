@@ -1,0 +1,22 @@
+{
+  "display_context": "thirdperson_righthand",
+  "fixtures": [
+    "racksnstands:sword_floor_stand"
+  ],
+  "items": [
+    "cataclysm:gauntlet_of_bulwark"
+  ],
+  "model_translation": [
+    -0.221169,
+    0.050362,
+    -0.435043
+  ],
+  "priority": 70,
+  "relative_rotation": false,
+  "rotation": [
+    0.0,
+    89.97202604963779,
+    0.0
+  ],
+  "scale": 0.859353
+}

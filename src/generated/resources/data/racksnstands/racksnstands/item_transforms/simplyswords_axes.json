@@ -1,0 +1,39 @@
+{
+  "items": [
+    "simplyswords:diamond_greataxe",
+    "simplyswords:gobber_compat/gobber/gobber_greataxe",
+    "simplyswords:gobber_compat/gobber_end/gobber_end_greataxe",
+    "simplyswords:gobber_compat/gobber_nether/gobber_nether_greataxe",
+    "simplyswords:gold_greataxe",
+    "simplyswords:iron_greataxe",
+    "simplyswords:livyatan",
+    "simplyswords:mythicmetals_compat/adamantite/adamantite_greataxe",
+    "simplyswords:mythicmetals_compat/aquarium/aquarium_greataxe",
+    "simplyswords:mythicmetals_compat/banglum/banglum_greataxe",
+    "simplyswords:mythicmetals_compat/bronze/bronze_greataxe",
+    "simplyswords:mythicmetals_compat/carmot/carmot_greataxe",
+    "simplyswords:mythicmetals_compat/celestium/celestium_greataxe",
+    "simplyswords:mythicmetals_compat/kyber/kyber_greataxe",
+    "simplyswords:mythicmetals_compat/metallurgium/metallurgium_greataxe",
+    "simplyswords:mythicmetals_compat/mythril/mythril_greataxe",
+    "simplyswords:mythicmetals_compat/orichalcum/orichalcum_greataxe",
+    "simplyswords:mythicmetals_compat/osmium/osmium_greataxe",
+    "simplyswords:mythicmetals_compat/palladium/palladium_greataxe",
+    "simplyswords:mythicmetals_compat/prometheum/prometheum_greataxe",
+    "simplyswords:mythicmetals_compat/quadrillum/quadrillum_greataxe",
+    "simplyswords:mythicmetals_compat/runite/runite_greataxe",
+    "simplyswords:mythicmetals_compat/star_platinum/star_platinum_greataxe",
+    "simplyswords:mythicmetals_compat/steel/steel_greataxe",
+    "simplyswords:mythicmetals_compat/stormyx/stormyx_greataxe",
+    "simplyswords:netherite_greataxe",
+    "simplyswords:runic_greataxe",
+    "simplyswords:soulpyre"
+  ],
+  "priority": 35,
+  "relative_rotation": true,
+  "rotation": [
+    0,
+    0,
+    -45
+  ]
+}

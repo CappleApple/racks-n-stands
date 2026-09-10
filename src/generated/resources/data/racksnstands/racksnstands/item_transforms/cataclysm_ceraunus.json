@@ -1,0 +1,19 @@
+{
+  "display_context": "thirdperson_righthand",
+  "items": [
+    "cataclysm:ceraunus"
+  ],
+  "model_translation": [
+    -0.0,
+    -0.103766,
+    -0.15625
+  ],
+  "priority": 55,
+  "relative_rotation": true,
+  "rotation": [
+    0.0,
+    90.0,
+    0.0
+  ],
+  "scale": 0.625295
+}

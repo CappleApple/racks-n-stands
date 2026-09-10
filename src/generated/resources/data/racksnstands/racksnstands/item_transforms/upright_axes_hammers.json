@@ -1,0 +1,12 @@
+{
+  "item_tags": [
+    "racksnstands:upright_axes_hammers"
+  ],
+  "priority": 25,
+  "relative_rotation": true,
+  "rotation": [
+    0,
+    0,
+    -45
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "display_context": "thirdperson_righthand",
+  "items": [
+    "cataclysm:cursed_bow"
+  ],
+  "model_translation": [
+    0.062525,
+    0.223138,
+    -0.099183
+  ],
+  "priority": 55,
+  "relative_rotation": true,
+  "rotation": [
+    0.0,
+    90.0,
+    0.0
+  ],
+  "scale": 0.655867
+}

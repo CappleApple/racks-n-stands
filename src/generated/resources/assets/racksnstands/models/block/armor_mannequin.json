@@ -1,0 +1,471 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "up": {
+          "texture": "#dark",
+          "tintindex": 1,
+          "uv": [
+            2.0,
+            2.0,
+            5.0,
+            14.0
+          ]
+        }
+      },
+      "from": [
+        2.0,
+        0.0,
+        2.0
+      ],
+      "to": [
+        5.0,
+        2.0,
+        14.0
+      ]
+    },
+    {
+      "faces": {
+        "up": {
+          "texture": "#dark",
+          "tintindex": 1,
+          "uv": [
+            5.0,
+            2.0,
+            7.0,
+            7.0
+          ]
+        }
+      },
+      "from": [
+        5.0,
+        0.0,
+        2.0
+      ],
+      "to": [
+        7.0,
+        2.0,
+        7.0
+      ]
+    },
+    {
+      "faces": {
+        "up": {
+          "texture": "#dark",
+          "tintindex": 1,
+          "uv": [
+            5.0,
+            9.0,
+            7.0,
+            14.0
+          ]
+        }
+      },
+      "from": [
+        5.0,
+        0.0,
+        9.0
+      ],
+      "to": [
+        7.0,
+        2.0,
+        14.0
+      ]
+    },
+    {
+      "faces": {
+        "up": {
+          "texture": "#dark",
+          "tintindex": 1,
+          "uv": [
+            11.0,
+            2.0,
+            14.0,
+            14.0
+          ]
+        }
+      },
+      "from": [
+        11.0,
+        0.0,
+        2.0
+      ],
+      "to": [
+        14.0,
+        2.0,
+        14.0
+      ]
+    },
+    {
+      "faces": {
+        "up": {
+          "texture": "#dark",
+          "tintindex": 1,
+          "uv": [
+            9.0,
+            2.0,
+            11.0,
+            7.0
+          ]
+        }
+      },
+      "from": [
+        9.0,
+        0.0,
+        2.0
+      ],
+      "to": [
+        11.0,
+        2.0,
+        7.0
+      ]
+    },
+    {
+      "faces": {
+        "up": {
+          "texture": "#dark",
+          "tintindex": 1,
+          "uv": [
+            9.0,
+            9.0,
+            11.0,
+            14.0
+          ]
+        }
+      },
+      "from": [
+        9.0,
+        0.0,
+        9.0
+      ],
+      "to": [
+        11.0,
+        2.0,
+        14.0
+      ]
+    },
+    {
+      "faces": {
+        "up": {
+          "texture": "#dark",
+          "tintindex": 1,
+          "uv": [
+            7.0,
+            2.0,
+            9.0,
+            7.0
+          ]
+        }
+      },
+      "from": [
+        7.0,
+        0.0,
+        2.0
+      ],
+      "to": [
+        9.0,
+        2.0,
+        7.0
+      ]
+    },
+    {
+      "faces": {
+        "up": {
+          "texture": "#dark",
+          "tintindex": 1,
+          "uv": [
+            7.0,
+            9.0,
+            9.0,
+            14.0
+          ]
+        }
+      },
+      "from": [
+        7.0,
+        0.0,
+        9.0
+      ],
+      "to": [
+        9.0,
+        2.0,
+        14.0
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "texture": "#dark",
+          "tintindex": 1,
+          "uv": [
+            2.0,
+            2.0,
+            14.0,
+            14.0
+          ]
+        },
+        "east": {
+          "texture": "#dark",
+          "tintindex": 1,
+          "uv": [
+            2.0,
+            14.0,
+            14.0,
+            16.0
+          ]
+        },
+        "north": {
+          "texture": "#dark",
+          "tintindex": 1,
+          "uv": [
+            2.0,
+            14.0,
+            14.0,
+            16.0
+          ]
+        },
+        "south": {
+          "texture": "#dark",
+          "tintindex": 1,
+          "uv": [
+            2.0,
+            14.0,
+            14.0,
+            16.0
+          ]
+        },
+        "west": {
+          "texture": "#dark",
+          "tintindex": 1,
+          "uv": [
+            2.0,
+            14.0,
+            14.0,
+            16.0
+          ]
+        }
+      },
+      "from": [
+        2.0,
+        0.0,
+        2.0
+      ],
+      "to": [
+        14.0,
+        2.0,
+        14.0
+      ]
+    },
+    {
+      "faces": {
+        "west": {
+          "texture": "#wood",
+          "tintindex": 0,
+          "uv": [
+            7.0,
+            0.0,
+            9.0,
+            0.9999999999999996
+          ]
+        }
+      },
+      "from": [
+        7.0,
+        15.0,
+        7.0
+      ],
+      "to": [
+        9.0,
+        16.0,
+        9.0
+      ]
+    },
+    {
+      "faces": {
+        "east": {
+          "texture": "#wood",
+          "tintindex": 0,
+          "uv": [
+            7.0,
+            0.0,
+            9.0,
+            0.9999999999999996
+          ]
+        }
+      },
+      "from": [
+        7.0,
+        15.0,
+        7.0
+      ],
+      "to": [
+        9.0,
+        16.0,
+        9.0
+      ]
+    },
+    {
+      "faces": {
+        "north": {
+          "texture": "#wood",
+          "tintindex": 0,
+          "uv": [
+            7.0,
+            0.0,
+            9.0,
+            14.0
+          ]
+        },
+        "south": {
+          "texture": "#wood",
+          "tintindex": 0,
+          "uv": [
+            7.0,
+            0.0,
+            9.0,
+            14.0
+          ]
+        },
+        "up": {
+          "texture": "#wood",
+          "tintindex": 0,
+          "uv": [
+            7.0,
+            7.0,
+            9.0,
+            9.0
+          ]
+        }
+      },
+      "from": [
+        7.0,
+        2.0,
+        7.0
+      ],
+      "to": [
+        9.0,
+        16.0,
+        9.0
+      ]
+    },
+    {
+      "faces": {
+        "north": {
+          "texture": "#wood",
+          "tintindex": 0,
+          "uv": [
+            9.0,
+            1.0,
+            11.0,
+            14.0
+          ]
+        },
+        "south": {
+          "texture": "#wood",
+          "tintindex": 0,
+          "uv": [
+            5.0,
+            1.0,
+            7.0,
+            14.0
+          ]
+        },
+        "up": {
+          "texture": "#wood",
+          "tintindex": 0,
+          "uv": [
+            5.0,
+            7.0,
+            7.0,
+            9.0
+          ]
+        },
+        "west": {
+          "texture": "#wood",
+          "tintindex": 0,
+          "uv": [
+            7.0,
+            1.0,
+            9.0,
+            14.0
+          ]
+        }
+      },
+      "from": [
+        5.0,
+        2.0,
+        7.0
+      ],
+      "to": [
+        7.0,
+        15.0,
+        9.0
+      ]
+    },
+    {
+      "faces": {
+        "east": {
+          "texture": "#wood",
+          "tintindex": 0,
+          "uv": [
+            7.0,
+            1.0,
+            9.0,
+            14.0
+          ]
+        },
+        "north": {
+          "texture": "#wood",
+          "tintindex": 0,
+          "uv": [
+            5.0,
+            1.0,
+            7.0,
+            14.0
+          ]
+        },
+        "south": {
+          "texture": "#wood",
+          "tintindex": 0,
+          "uv": [
+            9.0,
+            1.0,
+            11.0,
+            14.0
+          ]
+        },
+        "up": {
+          "texture": "#wood",
+          "tintindex": 0,
+          "uv": [
+            9.0,
+            7.0,
+            11.0,
+            9.0
+          ]
+        }
+      },
+      "from": [
+        9.0,
+        2.0,
+        7.0
+      ],
+      "to": [
+        11.0,
+        15.0,
+        9.0
+      ]
+    }
+  ],
+  "textures": {
+    "base": "minecraft:block/polished_andesite",
+    "cloth": "minecraft:block/brown_wool",
+    "dark": "minecraft:block/dark_oak_planks",
+    "metal": "minecraft:block/iron_block",
+    "particle": "minecraft:block/oak_planks",
+    "stone": "minecraft:block/stone_bricks",
+    "trim": "minecraft:block/smooth_stone",
+    "wood": "minecraft:block/stripped_oak_log"
+  }
+}

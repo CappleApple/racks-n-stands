@@ -1,0 +1,19 @@
+{
+  "display_context": "thirdperson_righthand",
+  "items": [
+    "cataclysm:wither_assault_shoulder_weapon"
+  ],
+  "model_translation": [
+    -0.0,
+    -0.185853,
+    -0.359266
+  ],
+  "priority": 55,
+  "relative_rotation": true,
+  "rotation": [
+    90.0,
+    0.0,
+    0.0
+  ],
+  "scale": 0.802277
+}

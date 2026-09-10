@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#minecraft:swords",
+      "required": false
+    },
+    {
+      "id": "#c:tools/sword",
+      "required": false
+    },
+    {
+      "id": "#simplyswords:swords",
+      "required": false
+    },
+    {
+      "id": "#simplymore:weapon_types/all",
+      "required": false
+    }
+  ]
+}

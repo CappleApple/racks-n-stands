@@ -1,0 +1,19 @@
+{
+  "display_context": "thirdperson_righthand",
+  "items": [
+    "cataclysm:ancient_spear"
+  ],
+  "model_translation": [
+    -0.0,
+    -0.425,
+    -0.140625
+  ],
+  "priority": 55,
+  "relative_rotation": true,
+  "rotation": [
+    0.0,
+    90.0,
+    180.0
+  ],
+  "scale": 0.425
+}

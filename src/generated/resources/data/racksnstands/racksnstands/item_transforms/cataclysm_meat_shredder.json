@@ -1,0 +1,19 @@
+{
+  "display_context": "thirdperson_righthand",
+  "items": [
+    "cataclysm:meat_shredder"
+  ],
+  "model_translation": [
+    0.0425,
+    -0.485,
+    -0.140625
+  ],
+  "priority": 55,
+  "relative_rotation": true,
+  "rotation": [
+    0.0,
+    90.0,
+    0.0
+  ],
+  "scale": 0.590278
+}

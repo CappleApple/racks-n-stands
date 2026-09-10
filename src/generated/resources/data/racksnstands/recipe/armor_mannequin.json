@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "decorations",
+  "key": {
+    "C": {
+      "item": "minecraft:armor_stand"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "minecraft:oak_planks"
+    }
+  },
+  "pattern": [
+    "W W",
+    " C ",
+    "WSW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "racksnstands:armor_mannequin"
+  }
+}

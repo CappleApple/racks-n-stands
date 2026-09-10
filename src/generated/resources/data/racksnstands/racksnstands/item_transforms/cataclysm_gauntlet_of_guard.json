@@ -1,0 +1,19 @@
+{
+  "display_context": "thirdperson_righthand",
+  "items": [
+    "cataclysm:gauntlet_of_guard"
+  ],
+  "model_translation": [
+    -0.09993,
+    0.10625,
+    -0.514653
+  ],
+  "priority": 55,
+  "relative_rotation": true,
+  "rotation": [
+    90.0,
+    0.0,
+    0.0
+  ],
+  "scale": 1.0
+}

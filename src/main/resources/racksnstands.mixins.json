@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.cappleapple.racksnstands.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": ["client.ArmorEquipmentViewMixin"],
+  "injectors": {"defaultRequire": 1}
+}

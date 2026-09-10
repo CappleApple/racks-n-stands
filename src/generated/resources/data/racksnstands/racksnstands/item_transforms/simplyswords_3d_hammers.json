@@ -1,0 +1,42 @@
+{
+  "items": [
+    "simplyswords:diamond_greathammer",
+    "simplyswords:gobber_compat/gobber/gobber_greathammer",
+    "simplyswords:gobber_compat/gobber_end/gobber_end_greathammer",
+    "simplyswords:gobber_compat/gobber_nether/gobber_nether_greathammer",
+    "simplyswords:gold_greathammer",
+    "simplyswords:hearthflame",
+    "simplyswords:hiveheart",
+    "simplyswords:iron_greathammer",
+    "simplyswords:mjolnir",
+    "simplyswords:mythicmetals_compat/adamantite/adamantite_greathammer",
+    "simplyswords:mythicmetals_compat/aquarium/aquarium_greathammer",
+    "simplyswords:mythicmetals_compat/banglum/banglum_greathammer",
+    "simplyswords:mythicmetals_compat/bronze/bronze_greathammer",
+    "simplyswords:mythicmetals_compat/carmot/carmot_greathammer",
+    "simplyswords:mythicmetals_compat/celestium/celestium_greathammer",
+    "simplyswords:mythicmetals_compat/durasteel/durasteel_greathammer",
+    "simplyswords:mythicmetals_compat/kyber/kyber_greathammer",
+    "simplyswords:mythicmetals_compat/metallurgium/metallurgium_greathammer",
+    "simplyswords:mythicmetals_compat/mythril/mythril_greathammer",
+    "simplyswords:mythicmetals_compat/orichalcum/orichalcum_greathammer",
+    "simplyswords:mythicmetals_compat/osmium/osmium_greathammer",
+    "simplyswords:mythicmetals_compat/palladium/palladium_greathammer",
+    "simplyswords:mythicmetals_compat/prometheum/prometheum_greathammer",
+    "simplyswords:mythicmetals_compat/quadrillum/quadrillum_greathammer",
+    "simplyswords:mythicmetals_compat/runite/runite_greathammer",
+    "simplyswords:mythicmetals_compat/star_platinum/star_platinum_greathammer",
+    "simplyswords:mythicmetals_compat/steel/steel_greathammer",
+    "simplyswords:mythicmetals_compat/stormyx/stormyx_greathammer",
+    "simplyswords:netherite_greathammer",
+    "simplyswords:runic_greathammer",
+    "simplyswords:soulkeeper"
+  ],
+  "priority": 40,
+  "relative_rotation": true,
+  "rotation": [
+    0,
+    0,
+    45
+  ]
+}

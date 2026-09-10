@@ -1,0 +1,44 @@
+{
+  "enchantment": "racksnstands:repairing",
+  "levels": {
+    "1": 128,
+    "10": 1280,
+    "2": 256,
+    "3": 384,
+    "4": 512,
+    "5": 640,
+    "6": 768,
+    "7": 896,
+    "8": 1024,
+    "9": 1152
+  },
+  "materials": [
+    {
+      "id": "iron_ingot",
+      "item": "minecraft:iron_ingot",
+      "power": 16,
+      "resource_value": 2
+    },
+    {
+      "id": "amethyst_shard",
+      "item": "minecraft:amethyst_shard",
+      "power": 32,
+      "resource_value": 4
+    },
+    {
+      "id": "experience_bottle",
+      "item": "minecraft:experience_bottle",
+      "power": 64,
+      "resource_value": 8
+    },
+    {
+      "id": "echo_shard",
+      "item": "minecraft:echo_shard",
+      "power": 128,
+      "resource_value": 16
+    }
+  ],
+  "optional": true,
+  "particle": "minecraft:enchant",
+  "particle_color": "#8DCBC2"
+}

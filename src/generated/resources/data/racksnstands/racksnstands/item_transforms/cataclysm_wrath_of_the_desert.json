@@ -1,0 +1,19 @@
+{
+  "display_context": "thirdperson_righthand",
+  "items": [
+    "cataclysm:wrath_of_the_desert"
+  ],
+  "model_translation": [
+    0.062525,
+    0.223138,
+    0.013562
+  ],
+  "priority": 55,
+  "relative_rotation": true,
+  "rotation": [
+    0.0,
+    90.0,
+    0.0
+  ],
+  "scale": 0.655867
+}

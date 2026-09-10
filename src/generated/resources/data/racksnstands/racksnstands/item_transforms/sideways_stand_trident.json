@@ -1,0 +1,14 @@
+{
+  "fixtures": [
+    "racksnstands:sword_floor_stand"
+  ],
+  "items": [
+    "minecraft:trident"
+  ],
+  "priority": 65,
+  "rotation": [
+    0,
+    0,
+    90
+  ]
+}

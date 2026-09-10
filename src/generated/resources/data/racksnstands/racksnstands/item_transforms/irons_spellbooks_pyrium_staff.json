@@ -1,0 +1,19 @@
+{
+  "display_context": "thirdperson_righthand",
+  "items": [
+    "irons_spellbooks:pyrium_staff"
+  ],
+  "model_translation": [
+    0,
+    0.0625,
+    -0.109375
+  ],
+  "priority": 55,
+  "relative_rotation": true,
+  "rotation": [
+    0.0,
+    90.0,
+    180.0
+  ],
+  "scale": 0.65
+}

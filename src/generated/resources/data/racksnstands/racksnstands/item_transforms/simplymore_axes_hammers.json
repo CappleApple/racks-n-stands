@@ -1,0 +1,13 @@
+{
+  "item_tags": [
+    "simplymore:weapon_types/greataxes",
+    "simplymore:weapon_types/pernachs"
+  ],
+  "priority": 35,
+  "relative_rotation": true,
+  "rotation": [
+    0,
+    0,
+    -45
+  ]
+}

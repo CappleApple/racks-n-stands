@@ -1,0 +1,16 @@
+{
+  "display_context": "thirdperson_righthand",
+  "items": [
+    "too_many_bows:gravewire_bow",
+    "too_many_bows:vaultpiercer",
+    "too_many_bows:soulhoard"
+  ],
+  "priority": 55,
+  "relative_rotation": true,
+  "rotation": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "scale": 0.65
+}

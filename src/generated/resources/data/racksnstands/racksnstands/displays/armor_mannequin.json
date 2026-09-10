@@ -1,0 +1,129 @@
+{
+  "behavior": "racksnstands:armor_loadout",
+  "slots": [
+    {
+      "equipment_slot": "head",
+      "filter": {},
+      "index": 0,
+      "interaction_bounds": [
+        0.0,
+        1.7,
+        0.0,
+        1.0,
+        2.25,
+        1.0
+      ],
+      "transform": {
+        "rotation": [
+          0.0,
+          180.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "translation": [
+          0.5,
+          1.72,
+          0.5
+        ]
+      },
+      "worn_armor": true
+    },
+    {
+      "equipment_slot": "chest",
+      "filter": {},
+      "index": 1,
+      "interaction_bounds": [
+        0.0,
+        0.9,
+        0.0,
+        1.0,
+        1.7,
+        1.0
+      ],
+      "transform": {
+        "rotation": [
+          0.0,
+          180.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "translation": [
+          0.5,
+          1.72,
+          0.5
+        ]
+      },
+      "worn_armor": true
+    },
+    {
+      "equipment_slot": "legs",
+      "filter": {},
+      "index": 2,
+      "interaction_bounds": [
+        0.0,
+        0.4,
+        0.0,
+        1.0,
+        0.9,
+        1.0
+      ],
+      "transform": {
+        "rotation": [
+          0.0,
+          180.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "translation": [
+          0.5,
+          1.72,
+          0.5
+        ]
+      },
+      "worn_armor": true
+    },
+    {
+      "equipment_slot": "feet",
+      "filter": {},
+      "index": 3,
+      "interaction_bounds": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.4,
+        1.0
+      ],
+      "transform": {
+        "rotation": [
+          0.0,
+          180.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "translation": [
+          0.5,
+          1.72,
+          0.5
+        ]
+      },
+      "worn_armor": true
+    }
+  ]
+}

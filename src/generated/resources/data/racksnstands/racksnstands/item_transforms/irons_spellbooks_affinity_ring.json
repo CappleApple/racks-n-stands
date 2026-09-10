@@ -1,0 +1,19 @@
+{
+  "display_context": "thirdperson_righthand",
+  "items": [
+    "irons_spellbooks:affinity_ring"
+  ],
+  "model_translation": [
+    0,
+    -0.1875,
+    -0.0625
+  ],
+  "priority": 55,
+  "relative_rotation": true,
+  "rotation": [
+    0,
+    0,
+    0
+  ],
+  "scale": 1.5
+}

@@ -1,0 +1,12 @@
+{
+  "items": [
+    "minecraft:trident"
+  ],
+  "priority": 30,
+  "relative_rotation": true,
+  "rotation": [
+    0,
+    0,
+    0
+  ]
+}

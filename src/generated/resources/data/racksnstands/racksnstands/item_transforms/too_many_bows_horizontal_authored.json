@@ -1,0 +1,41 @@
+{
+  "display_context": "thirdperson_righthand",
+  "items": [
+    "too_many_bows:arcane_bow",
+    "too_many_bows:dark_bow",
+    "too_many_bows:frostbite",
+    "too_many_bows:arc_heavens",
+    "too_many_bows:dragons_breath",
+    "too_many_bows:solar_bow",
+    "too_many_bows:shulker_blast",
+    "too_many_bows:emerald_sage_bow",
+    "too_many_bows:demons_grasp",
+    "too_many_bows:aethers_call",
+    "too_many_bows:ironclad_bow",
+    "too_many_bows:hunter_bow",
+    "too_many_bows:sentinels_wrath",
+    "too_many_bows:burnt_relic",
+    "too_many_bows:cyroheart_bow",
+    "too_many_bows:vitality_weaver",
+    "too_many_bows:astral_bound",
+    "too_many_bows:spectral_whisper",
+    "too_many_bows:auroras_grace",
+    "too_many_bows:twin_shadows",
+    "too_many_bows:dusk_reaper",
+    "too_many_bows:verdant_vigor",
+    "too_many_bows:ethereal_hunter",
+    "too_many_bows:crimson_nexus",
+    "too_many_bows:radiance",
+    "too_many_bows:webstring",
+    "too_many_bows:torchbearer",
+    "too_many_bows:beacon_beam_bow"
+  ],
+  "priority": 55,
+  "relative_rotation": true,
+  "rotation": [
+    0.0,
+    0.0,
+    90.0
+  ],
+  "scale": 0.65
+}

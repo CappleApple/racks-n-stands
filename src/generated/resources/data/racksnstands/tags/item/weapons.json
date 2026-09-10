@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "#racksnstands:swords",
+    "#racksnstands:polearms",
+    "#racksnstands:staffs",
+    {
+      "id": "#c:melee_weapon_tools",
+      "required": false
+    },
+    {
+      "id": "#c:tools/melee_weapon",
+      "required": false
+    },
+    {
+      "id": "#minecraft:axes",
+      "required": false
+    },
+    "minecraft:mace"
+  ]
+}

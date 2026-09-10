@@ -1,0 +1,12 @@
+{
+  "item_tags": [
+    "racksnstands:weapons"
+  ],
+  "priority": 10,
+  "relative_rotation": true,
+  "rotation": [
+    0,
+    0,
+    135
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "slots": [
+    {
+      "filter": {},
+      "index": 0,
+      "interaction_bounds": [
+        0.0,
+        0.0,
+        0.0,
+        0.25,
+        1.0,
+        1.0
+      ],
+      "transform": {
+        "scale": [
+          0.31,
+          0.31,
+          0.31
+        ],
+        "translation": [
+          0.125,
+          0.54,
+          0.7
+        ]
+      }
+    },
+    {
+      "filter": {},
+      "index": 1,
+      "interaction_bounds": [
+        0.25,
+        0.0,
+        0.0,
+        0.5,
+        1.0,
+        1.0
+      ],
+      "transform": {
+        "scale": [
+          0.31,
+          0.31,
+          0.31
+        ],
+        "translation": [
+          0.375,
+          0.54,
+          0.698
+        ]
+      }
+    },
+    {
+      "filter": {},
+      "index": 2,
+      "interaction_bounds": [
+        0.5,
+        0.0,
+        0.0,
+        0.75,
+        1.0,
+        1.0
+      ],
+      "transform": {
+        "scale": [
+          0.31,
+          0.31,
+          0.31
+        ],
+        "translation": [
+          0.625,
+          0.54,
+          0.696
+        ]
+      }
+    },
+    {
+      "filter": {},
+      "index": 3,
+      "interaction_bounds": [
+        0.75,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform": {
+        "scale": [
+          0.31,
+          0.31,
+          0.31
+        ],
+        "translation": [
+          0.875,
+          0.54,
+          0.694
+        ]
+      }
+    }
+  ]
+}

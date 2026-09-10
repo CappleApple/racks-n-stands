@@ -1,0 +1,30 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+[[mods]]
+modId="racksnstands"
+version="${version}"
+displayName="Racks N' Stands"
+authors="CappleApple"
+description='''Equipment furniture with data-driven displays, atomic armor loadouts, and the Repairing treasure enchantment.'''
+[[dependencies.racksnstands]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.248,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.racksnstands]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1]"
+ordering="NONE"
+side="BOTH"
+[[dependencies.racksnstands]]
+modId="curios"
+type="optional"
+versionRange="[9.5.1,)"
+ordering="AFTER"
+side="BOTH"
+
+[[mixins]]
+config="racksnstands.mixins.json"

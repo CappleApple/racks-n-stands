@@ -1,0 +1,28 @@
+{
+  "slots": [
+    {
+      "filter": {},
+      "index": 0,
+      "interaction_bounds": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform": {
+        "scale": [
+          0.45,
+          0.45,
+          0.45
+        ],
+        "translation": [
+          0.5,
+          0.64,
+          0.27
+        ]
+      }
+    }
+  ]
+}

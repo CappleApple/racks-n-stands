@@ -1,0 +1,22 @@
+{
+  "anvil_cost": 2,
+  "description": {
+    "translate": "enchantment.racksnstands.repairing"
+  },
+  "effects": {},
+  "max_cost": {
+    "base": 60,
+    "per_level_above_first": 5
+  },
+  "max_level": 10,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 5
+  },
+  "primary_items": "#racksnstands:repairing_hosts",
+  "slots": [
+    "any"
+  ],
+  "supported_items": "#racksnstands:repairing_hosts",
+  "weight": 1
+}

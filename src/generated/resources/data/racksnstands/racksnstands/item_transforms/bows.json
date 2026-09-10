@@ -1,0 +1,12 @@
+{
+  "item_tags": [
+    "racksnstands:bows"
+  ],
+  "priority": 30,
+  "relative_rotation": true,
+  "rotation": [
+    0,
+    0,
+    0
+  ]
+}

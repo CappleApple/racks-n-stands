@@ -1,0 +1,42 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#minecraft:axes",
+      "required": false
+    },
+    {
+      "id": "#c:tools/axe",
+      "required": false
+    },
+    {
+      "id": "#c:tools/hammer",
+      "required": false
+    },
+    {
+      "id": "#simplyswords:implicit/greataxe",
+      "required": false
+    },
+    {
+      "id": "#simplyswords:implicit/greathammer",
+      "required": false
+    },
+    {
+      "id": "#simplyswords:implicit/hammer",
+      "required": false
+    },
+    {
+      "id": "#simplymore:weapon_types/greataxes",
+      "required": false
+    },
+    {
+      "id": "#simplymore:weapon_types/greathammers",
+      "required": false
+    },
+    {
+      "id": "#simplymore:weapon_types/pernachs",
+      "required": false
+    },
+    "minecraft:mace"
+  ]
+}

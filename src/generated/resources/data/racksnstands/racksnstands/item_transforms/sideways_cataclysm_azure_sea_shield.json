@@ -1,0 +1,22 @@
+{
+  "display_context": "thirdperson_righthand",
+  "fixtures": [
+    "racksnstands:sword_floor_stand"
+  ],
+  "items": [
+    "cataclysm:azure_sea_shield"
+  ],
+  "model_translation": [
+    -0.0475,
+    0.125,
+    -0.25
+  ],
+  "priority": 70,
+  "relative_rotation": false,
+  "rotation": [
+    -89.999995674289,
+    0.0,
+    89.999995674289
+  ],
+  "scale": 1.0
+}

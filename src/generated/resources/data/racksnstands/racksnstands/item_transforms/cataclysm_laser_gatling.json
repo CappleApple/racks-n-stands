@@ -1,0 +1,19 @@
+{
+  "display_context": "thirdperson_righthand",
+  "items": [
+    "cataclysm:laser_gatling"
+  ],
+  "model_translation": [
+    -0.025187,
+    -0.0375,
+    0.031044
+  ],
+  "priority": 55,
+  "relative_rotation": true,
+  "rotation": [
+    90.0,
+    0.0,
+    0.0
+  ],
+  "scale": 1.0
+}

@@ -1,0 +1,22 @@
+{
+  "display_context": "thirdperson_righthand",
+  "fixtures": [
+    "racksnstands:sword_floor_stand"
+  ],
+  "items": [
+    "cataclysm:cursed_bow"
+  ],
+  "model_translation": [
+    0.062525,
+    0.223138,
+    -0.099183
+  ],
+  "priority": 70,
+  "relative_rotation": false,
+  "rotation": [
+    -89.999995674289,
+    0.0,
+    89.999995674289
+  ],
+  "scale": 0.655867
+}

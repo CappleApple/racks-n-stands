@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "decorations",
+  "key": {
+    "C": {
+      "item": "minecraft:iron_ingot"
+    },
+    "S": {
+      "item": "minecraft:smooth_stone"
+    },
+    "W": {
+      "item": "minecraft:stone_bricks"
+    }
+  },
+  "pattern": [
+    "W W",
+    " C ",
+    "WSW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "racksnstands:generic_pedestal"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "item_tags": [
+    "simplymore:weapon_types/all"
+  ],
+  "priority": 12,
+  "relative_rotation": true,
+  "rotation": [
+    0,
+    0,
+    135
+  ]
+}

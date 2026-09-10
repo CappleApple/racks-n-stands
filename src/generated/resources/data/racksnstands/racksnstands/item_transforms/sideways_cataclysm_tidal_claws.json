@@ -1,0 +1,22 @@
+{
+  "display_context": "thirdperson_righthand",
+  "fixtures": [
+    "racksnstands:sword_floor_stand"
+  ],
+  "items": [
+    "cataclysm:tidal_claws"
+  ],
+  "model_translation": [
+    -0.102599,
+    0.128531,
+    -0.075876
+  ],
+  "priority": 70,
+  "relative_rotation": false,
+  "rotation": [
+    0.0,
+    89.97202604963779,
+    0.0
+  ],
+  "scale": 1.0
+}

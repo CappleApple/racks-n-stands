@@ -1,0 +1,55 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.143'
+}
+version = mod_version
+group = 'com.cappleapple.racksnstands'
+base { archivesName = 'racksnstands' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+repositories { maven { url = 'https://maven.theillusivec4.top/' }; maven { url = 'https://api.modrinth.com/maven'; content { includeGroup 'maven.modrinth' } } }
+neoForge {
+    version = neo_version
+    parchment { minecraftVersion = '1.21.1'; mappingsVersion = '2024.11.17' }
+    runs {
+        configureEach { systemProperty 'neoforge.enabledGameTestNamespaces', 'racksnstands,minecraft' }
+        client {
+            client(); gameDirectory = file('run-client')
+            if (project.hasProperty('visualQa')) {
+                systemProperty 'racksnstands.visualQa', 'true'
+                programArguments.addAll '--username', 'FixtureQA', '--quickPlayMultiplayer', '127.0.0.1:25587', '--width', '1280', '--height', '720'
+            }
+        }
+        server { server(); programArgument '--nogui'; gameDirectory = file(project.hasProperty('repairQa') ? 'run-repair-qa' : 'run-server') }
+        data {
+            data()
+            programArguments.addAll '--mod', 'racksnstands', '--all', '--output', file('src/generated/resources').absolutePath, '--existing', file('src/main/resources').absolutePath
+        }
+        gameTestServer { type = 'gameTestServer'; gameDirectory = file('run-gametest') }
+    }
+    mods { racksnstands { sourceSet sourceSets.main } }
+    unitTest { enable(); testedMod = mods.racksnstands }
+}
+dependencies {
+    compileOnly 'maven.modrinth:jade:15.10.6+neoforge'
+    if (project.hasProperty('withJade')) runtimeOnly 'maven.modrinth:jade:15.10.6+neoforge'
+    compileOnly 'top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1:api'
+    if (project.hasProperty('withCurios')) runtimeOnly 'top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1'
+    if (project.hasProperty('weaponModsDir')) {
+        def weaponMods = file(project.property('weaponModsDir'))
+        runtimeOnly fileTree(dir: weaponMods, includes: ['simplyswords-*.jar', 'simplymore-*.jar', 'SimplyTooltips-*.jar', 'architectury-*.jar', 'fzzy_config-*.jar', 'kotlinforforge-*.jar'])
+    }
+    if (project.hasProperty('cataclysmModsDir')) {
+        runtimeOnly fileTree(dir: file(project.property('cataclysmModsDir')), includes: ["L_Ender's Cataclysm*.jar", 'lionfishapi-*.jar'])
+    }
+    if (project.hasProperty('bowsModsDir')) runtimeOnly fileTree(dir: file(project.property('bowsModsDir')), includes: ['too_many_bows-*.jar'])
+    if (project.hasProperty('ironModsDir')) runtimeOnly fileTree(dir: file(project.property('ironModsDir')), includes: ['irons_spellbooks-*.jar', 'irons_lib-*.jar', 'geckolib-neoforge-*.jar', 'player-animation-lib-forge-*.jar'])
+    if (project.hasProperty('armorModsDir')) runtimeOnly fileTree(dir: file(project.property('armorModsDir')), includes: ['immersive_armors-*.jar'])
+    testImplementation platform('org.junit:junit-bom:5.11.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+sourceSets.main.resources.srcDir 'src/generated/resources'
+tasks.named('test', Test) { useJUnitPlatform() }
+tasks.named('processResources') { exclude '.cache/**'; inputs.property 'version', project.version; filesMatching('META-INF/neoforge.mods.toml') { expand version: project.version } }
+tasks.named('jar') { exclude 'com/cappleapple/racksnstands/gametest/**' }
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8'; options.release = 21 }

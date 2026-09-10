@@ -1,0 +1,35 @@
+{
+  "slots": [
+    {
+      "equipment_slot": "head",
+      "filter": {},
+      "index": 0,
+      "interaction_bounds": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "transform": {
+        "rotation": [
+          0.0,
+          180.0,
+          0.0
+        ],
+        "scale": [
+          0.85,
+          0.85,
+          0.85
+        ],
+        "translation": [
+          0.5,
+          0.6,
+          0.5
+        ]
+      },
+      "worn_armor": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "display_context": "thirdperson_righthand",
+  "items": [
+    "cataclysm:gauntlet_of_bulwark"
+  ],
+  "model_translation": [
+    -0.221169,
+    0.050362,
+    -0.435043
+  ],
+  "priority": 55,
+  "relative_rotation": true,
+  "rotation": [
+    90.0,
+    0.0,
+    0.0
+  ],
+  "scale": 0.859353
+}

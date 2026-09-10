@@ -1,0 +1,19 @@
+{
+  "display_context": "thirdperson_righthand",
+  "items": [
+    "cataclysm:tidal_claws"
+  ],
+  "model_translation": [
+    -0.102599,
+    0.128531,
+    -0.075876
+  ],
+  "priority": 55,
+  "relative_rotation": true,
+  "rotation": [
+    90.0,
+    0.0,
+    0.0
+  ],
+  "scale": 1.0
+}

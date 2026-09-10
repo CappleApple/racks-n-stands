@@ -1,0 +1,22 @@
+{
+  "display_context": "thirdperson_righthand",
+  "fixtures": [
+    "racksnstands:sword_floor_stand"
+  ],
+  "items": [
+    "cataclysm:the_incinerator"
+  ],
+  "model_translation": [
+    -0.0,
+    -0.858462,
+    -0.140245
+  ],
+  "priority": 70,
+  "relative_rotation": false,
+  "rotation": [
+    -89.999995674289,
+    0.0,
+    -89.999995674289
+  ],
+  "scale": 0.469682
+}

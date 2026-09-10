@@ -1,0 +1,19 @@
+{
+  "display_context": "thirdperson_righthand",
+  "items": [
+    "cataclysm:coral_spear"
+  ],
+  "model_translation": [
+    -0.004487,
+    -0.03125,
+    -0.068371
+  ],
+  "priority": 55,
+  "relative_rotation": true,
+  "rotation": [
+    0.0,
+    -60.0,
+    0.0
+  ],
+  "scale": 0.877419
+}

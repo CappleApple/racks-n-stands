@@ -1,0 +1,20 @@
+{
+  "display_context": "thirdperson_righthand",
+  "items": [
+    "too_many_bows:ancient_sage_bow",
+    "too_many_bows:verdant_viper",
+    "too_many_bows:flame_bow",
+    "too_many_bows:tidal_bow",
+    "too_many_bows:necro_flame_bow",
+    "too_many_bows:scatter_bow",
+    "too_many_bows:wind_bow"
+  ],
+  "priority": 55,
+  "relative_rotation": true,
+  "rotation": [
+    0.0,
+    90.0,
+    0.0
+  ],
+  "scale": 0.65
+}

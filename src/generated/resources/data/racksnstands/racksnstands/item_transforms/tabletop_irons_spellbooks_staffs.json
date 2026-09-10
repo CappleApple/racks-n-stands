@@ -1,0 +1,26 @@
+{
+  "display_context": "thirdperson_righthand",
+  "fixtures": [
+    "racksnstands:generic_tabletop_display"
+  ],
+  "items": [
+    "irons_spellbooks:graybeard_staff",
+    "irons_spellbooks:artificer_cane",
+    "irons_spellbooks:ice_staff",
+    "irons_spellbooks:blood_staff",
+    "irons_spellbooks:staff_of_the_nines"
+  ],
+  "offset": [
+    0,
+    0.12,
+    0
+  ],
+  "priority": 75,
+  "relative_rotation": true,
+  "rotation": [
+    0.0,
+    0.0,
+    180.0
+  ],
+  "scale": 0.75
+}

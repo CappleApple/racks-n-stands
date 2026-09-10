@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#minecraft:chest_armor",
+      "required": false
+    },
+    "minecraft:elytra"
+  ]
+}

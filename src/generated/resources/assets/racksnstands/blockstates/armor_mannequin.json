@@ -1,0 +1,36 @@
+{
+  "variants": {
+    "facing=east,half=lower": {
+      "model": "racksnstands:block/armor_mannequin",
+      "y": 90
+    },
+    "facing=east,half=upper": {
+      "model": "racksnstands:block/armor_mannequin_upper",
+      "y": 90
+    },
+    "facing=north,half=lower": {
+      "model": "racksnstands:block/armor_mannequin",
+      "y": 0
+    },
+    "facing=north,half=upper": {
+      "model": "racksnstands:block/armor_mannequin_upper",
+      "y": 0
+    },
+    "facing=south,half=lower": {
+      "model": "racksnstands:block/armor_mannequin",
+      "y": 180
+    },
+    "facing=south,half=upper": {
+      "model": "racksnstands:block/armor_mannequin_upper",
+      "y": 180
+    },
+    "facing=west,half=lower": {
+      "model": "racksnstands:block/armor_mannequin",
+      "y": 270
+    },
+    "facing=west,half=upper": {
+      "model": "racksnstands:block/armor_mannequin_upper",
+      "y": 270
+    }
+  }
+}

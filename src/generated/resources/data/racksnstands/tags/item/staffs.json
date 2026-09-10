@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:blaze_rod",
+    {
+      "id": "#c:tools/wand",
+      "required": false
+    },
+    {
+      "id": "#c:tools/staff",
+      "required": false
+    },
+    {
+      "id": "#c:staffs",
+      "required": false
+    },
+    {
+      "id": "#c:wands",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "display_context": "thirdperson_righthand",
+  "fixtures": [
+    "racksnstands:sword_floor_stand"
+  ],
+  "items": [
+    "too_many_bows:ancient_sage_bow",
+    "too_many_bows:verdant_viper",
+    "too_many_bows:flame_bow",
+    "too_many_bows:tidal_bow",
+    "too_many_bows:necro_flame_bow",
+    "too_many_bows:scatter_bow",
+    "too_many_bows:wind_bow"
+  ],
+  "priority": 70,
+  "relative_rotation": false,
+  "rotation": [
+    -89.999995674289,
+    0.0,
+    89.999995674289
+  ],
+  "scale": 0.65
+}

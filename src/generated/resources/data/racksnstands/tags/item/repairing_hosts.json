@@ -1,0 +1,28 @@
+{
+  "replace": false,
+  "values": [
+    "racksnstands:generic_pedestal",
+    "racksnstands:tool_rack",
+    "racksnstands:armor_mannequin",
+    "racksnstands:helmet_stand",
+    "racksnstands:chestplate_stand",
+    "racksnstands:leggings_stand",
+    "racksnstands:boots_stand",
+    "racksnstands:weapon_rack",
+    "racksnstands:sword_wall_mount",
+    "racksnstands:sword_floor_stand",
+    "racksnstands:bow_mount",
+    "racksnstands:shield_mount",
+    "racksnstands:staff_mount",
+    "racksnstands:polearm_rack",
+    "racksnstands:generic_wall_display",
+    "racksnstands:generic_tabletop_display",
+    "racksnstands:ring_stand",
+    "racksnstands:necklace_bust",
+    "racksnstands:belt_display",
+    "racksnstands:bracelet_display",
+    "racksnstands:charm_pedestal",
+    "racksnstands:generic_curio_stand",
+    "racksnstands:curio_cabinet"
+  ]
+}

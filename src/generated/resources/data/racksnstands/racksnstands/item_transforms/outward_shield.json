@@ -1,0 +1,13 @@
+{
+  "display_context": "fixed",
+  "items": [
+    "minecraft:shield"
+  ],
+  "priority": 50,
+  "relative_rotation": true,
+  "rotation": [
+    0,
+    0,
+    0
+  ]
+}
