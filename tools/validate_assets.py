@@ -50,7 +50,7 @@ if jar.exists():
         assert not any("/gametest/" in n or n.startswith(".cache/") for n in names)
         assert all(n.startswith("com/cappleapple/racksnstands/") for n in names if n.endswith(".class")), "Third-party classes must not be bundled"
         assert not any(n.startswith(prefix) for n in names for prefix in ["top/theillusivec4/", "net/sweenus/", "net/rosemarythyme/", "snownee/"])
-        assert len([n for n in names if n.startswith("data/racksnstands/recipe/") and n.endswith(".json")]) == 13
+        assert len([n for n in names if n.startswith("data/racksnstands/recipe/") and n.endswith(".json")]) == 15
         assert len([n for n in names if n.startswith("data/racksnstands/racksnstands/item_transforms/") and n.endswith(".json")]) == len(list((root / "src/generated/resources/data/racksnstands/racksnstands/item_transforms").glob("*.json")))
         for suffix in ["json", "vsh", "fsh"]:
             assert f"assets/racksnstands/shaders/core/masked_glint.{suffix}" in names

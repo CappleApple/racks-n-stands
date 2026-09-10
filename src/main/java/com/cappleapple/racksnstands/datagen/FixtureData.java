@@ -125,11 +125,18 @@ public final class FixtureData implements DataProvider {
             "fixtures",array("racksnstands:sword_floor_stand"),"items",array("minecraft:trident"),"rotation",array(0,0,90)));
         CompanionOrientations.add(files);
         ExtraWeaponOrientations.add(files);
-        var levels=new JsonObject();for(int n=1;n<=10;n++) levels.addProperty(Integer.toString(n),128*n);
+        files.put("data/racksnstands/recipe/reset_appearance.json",object("type","racksnstands:reset_appearance","category","misc"));
+        files.put("data/racksnstands/recipe/copy_appearance.json",object("type","racksnstands:copy_appearance","category","misc"));
+        var levels=new JsonObject();int[] costs={48,128,240,336,472,760,1120,1560,2080,2680};
+        for(int n=0;n<costs.length;n++) levels.addProperty(Integer.toString(n+1),costs[n]);
+        // Stable affinity IDs keep existing knowledge pages valid after rebalancing.
         files.put("data/racksnstands/ritual_enchanting/enchantments/repairing.json",object("enchantment","racksnstands:repairing","optional",true,
             "materials",array(object("id","iron_ingot","item","minecraft:iron_ingot","power",16,"resource_value",2),
                 object("id","amethyst_shard","item","minecraft:amethyst_shard","power",32,"resource_value",4),
+                object("id","golden_apple","item","minecraft:golden_apple","power",48,"resource_value",6),
                 object("id","experience_bottle","item","minecraft:experience_bottle","power",64,"resource_value",8),
+                object("id","diamond","item","minecraft:diamond","power",80,"resource_value",10),
+                object("id","heart_of_the_sea","item","minecraft:heart_of_the_sea","power",104,"resource_value",13),
                 object("id","echo_shard","item","minecraft:echo_shard","power",128,"resource_value",16)),
             "levels",levels,"particle","minecraft:enchant","particle_color","#8DCBC2"));
         return files;

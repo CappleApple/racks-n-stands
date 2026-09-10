@@ -107,7 +107,7 @@ public final class FixtureBlockEntity extends BlockEntity implements DisplayFixt
     }
     public int revision() { return revision; }
     public boolean fitsCompartment() {
-        return profileId().equals(RacksNStands.id("tool_rack"))||profileId().equals(RacksNStands.id("curio_cabinet"));
+        return switch(profileId().getPath()) { case "tool_rack","weapon_rack","polearm_rack","curio_cabinet" -> true;default -> false; };
     }
     private void resolveTransforms() {
         var snapshot=level!=null&&level.isClientSide?Profiles.CLIENT:Profiles.SERVER;

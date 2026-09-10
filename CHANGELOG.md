@@ -1,3 +1,18 @@
+# 1.4.0 - 2026-09-09
+
+## Added
+
+- Craft customized stands and displays alone to reset their appearance while retaining enchantments and other item data.
+- Copy appearance to an entire uncustomized stack of the same fixture type using a reusable customized template, preserving the target stack's enchantments.
+- Added golden apples, diamonds and hearts of the sea to the built-in Repairing ritual, for seven materials total.
+
+## Changed
+
+- Rebalanced Repairing ritual power so the seven distinct known materials reach level V passively, with higher levels requiring boosted power.
+- Set furniture enchantability to the neutral ritual baseline so the same offerings work on both furniture and books.
+- Item racks display models at full size when they fit and only shrink oversized models to their slot bounds.
+- Exclude transparent texture corners when fitting rotated sprites, allowing narrow swords and tools to use their available space.
+
 # 1.3.2 - 2026-09-09
 
 ## Changed

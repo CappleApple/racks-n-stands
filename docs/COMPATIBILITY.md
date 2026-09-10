@@ -28,7 +28,21 @@ The integration consists entirely of a pre-included Repairing datapack definitio
 data/racksnstands/ritual_enchanting/enchantments/repairing.json
 ```
 
-Rituals Not Rolls reads it through its normal datapack loader. There is no mod-presence check, version requirement, dependency declaration or load-order requirement. The definition contains: `enchantment`, `materials`, `levels`, `particle`, and `particle_color`. Four stable affinity identifiers (`iron_ingot`, `amethyst_shard`, `experience_bottle`, `echo_shard`) participate in RNR's normal knowledge and discovery flow. Levels I–X have increasing thresholds of 128 through 1280. RNR controls material delivery, power and knowledge; fixture construction materials still have no maintenance effect.
+Rituals Not Rolls reads it through its normal datapack loader. There is no mod-presence check, version requirement, dependency declaration or load-order requirement. The seven affinities below participate in its normal knowledge-page and discovery flow. Existing affinity IDs are preserved. Construction materials and copied appearances have no maintenance-power effect.
+
+| Material / stable affinity ID | Passive power | Resource value |
+|---|---:|---:|
+| Iron ingot / `iron_ingot` | 16 | 2 |
+| Amethyst shard / `amethyst_shard` | 32 | 4 |
+| Golden apple / `golden_apple` | 48 | 6 |
+| Experience bottle / `experience_bottle` | 64 | 8 |
+| Diamond / `diamond` | 80 | 10 |
+| Heart of the sea / `heart_of_the_sea` | 104 | 13 |
+| Echo shard / `echo_shard` | 128 | 16 |
+
+One of each distinct material totals **472 passive power**. Repairing I-V thresholds are **48, 128, 240, 336 and 472**. Furniture enchantability is 10, matching Rituals Not Rolls' default neutral target baseline and the neutral treatment of books. Thus all seven known materials reach V without Consumption or Experience Catalysts, before chain-return bonuses; omitting a material falls short at baseline. Default chain-return bonuses still stay below VI. Custom RNR configs, power sharing and other datapack overrides can change the outcome.
+
+Levels VI-X require **760, 1120, 1560, 2080 and 2680** power, retaining progression through boosted rituals. An experience bottle is an ordinary reusable offering here, not an Experience Catalyst.
 
 Override that exact path to change acquisition balance. To disable only the bundled integration, replace it with:
 

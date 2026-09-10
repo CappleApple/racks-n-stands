@@ -35,6 +35,9 @@ public final class RacksNStands {
     public static final DeferredRegister<BlockEntityType<?>> ENTITIES=DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE,MOD_ID);
     public static final DeferredRegister<net.minecraft.core.component.DataComponentType<?>> COMPONENTS=DeferredRegister.create(Registries.DATA_COMPONENT_TYPE,MOD_ID);
     public static final java.util.function.Supplier<net.minecraft.core.component.DataComponentType<com.cappleapple.racksnstands.material.MaterialPalette>> MATERIALS=COMPONENTS.register("materials",() -> net.minecraft.core.component.DataComponentType.<com.cappleapple.racksnstands.material.MaterialPalette>builder().persistent(com.cappleapple.racksnstands.material.MaterialPalette.CODEC).networkSynchronized(net.minecraft.network.codec.ByteBufCodecs.fromCodec(com.cappleapple.racksnstands.material.MaterialPalette.CODEC)).build());
+    public static final DeferredRegister<net.minecraft.world.item.crafting.RecipeSerializer<?>> RECIPES=DeferredRegister.create(Registries.RECIPE_SERIALIZER,MOD_ID);
+    public static final java.util.function.Supplier<net.minecraft.world.item.crafting.RecipeSerializer<com.cappleapple.racksnstands.crafting.AppearanceRecipe>> RESET_APPEARANCE=RECIPES.register("reset_appearance",() -> new net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer<>(category -> new com.cappleapple.racksnstands.crafting.AppearanceRecipe(category,false)));
+    public static final java.util.function.Supplier<net.minecraft.world.item.crafting.RecipeSerializer<com.cappleapple.racksnstands.crafting.AppearanceRecipe>> COPY_APPEARANCE=RECIPES.register("copy_appearance",() -> new net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer<>(category -> new com.cappleapple.racksnstands.crafting.AppearanceRecipe(category,true)));
     public static final DeferredRegister<CreativeModeTab> TABS=DeferredRegister.create(Registries.CREATIVE_MODE_TAB,MOD_ID);
     public static final Map<String,DeferredBlock<FixtureBlock>> FIXTURES=new LinkedHashMap<>();
     static {
@@ -55,7 +58,7 @@ public final class RacksNStands {
             })).build());
     }
     public RacksNStands(IEventBus bus,ModContainer container) {
-        COMPONENTS.register(bus);bus.addListener(com.cappleapple.racksnstands.config.LiveConfig::reloaded);BLOCKS.register(bus);ITEMS.register(bus);ENTITIES.register(bus);TABS.register(bus);
+        COMPONENTS.register(bus);RECIPES.register(bus);bus.addListener(com.cappleapple.racksnstands.config.LiveConfig::reloaded);BLOCKS.register(bus);ITEMS.register(bus);ENTITIES.register(bus);TABS.register(bus);
         com.cappleapple.racksnstands.config.RepairConfigMigration.migrate(net.neoforged.fml.loading.FMLPaths.CONFIGDIR.get().resolve("racksnstands-common.toml"));
         container.registerConfig(ModConfig.Type.COMMON,FixtureConfig.COMMON);container.registerConfig(ModConfig.Type.CLIENT,FixtureConfig.CLIENT);
         bus.addListener(this::capabilities);bus.addListener(ProfileSync::register);bus.addListener(FixtureData::gather);

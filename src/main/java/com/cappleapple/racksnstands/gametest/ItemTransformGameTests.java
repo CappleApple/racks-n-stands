@@ -100,8 +100,9 @@ public final class ItemTransformGameTests {
     @GameTest(templateNamespace="minecraft",template="bastion/mobs/empty")
     public static void compactDisplaysUseHandModelsAndOrientationRules(GameTestHelper h) {
         var pos=new BlockPos(1,2,1);
-        for(String kind:List.of("tool_rack","curio_cabinet")) {
+        for(String kind:List.of("tool_rack","weapon_rack","polearm_rack","curio_cabinet")) {
             h.setBlock(pos,RacksNStands.FIXTURES.get(kind).get());var fixture=(FixtureBlockEntity)h.getBlockEntity(pos);
+            if(!kind.equals("curio_cabinet")) h.assertTrue(fixture.profile().slots().get(0).transform().sx()==1,"Racks start from full-size geometry before clamping");
             if(kind.equals("curio_cabinet")) {
                 h.assertTrue(Math.abs(fixture.profile().slots().get(0).transform().y()-(8.5/16+.001))<1e-6&&Math.abs(fixture.profile().slots().get(3).transform().y()-(2.0/16+.001))<1e-6,"Shelf anchors are on the two shelf surfaces");
             }

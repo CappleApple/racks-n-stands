@@ -44,11 +44,17 @@ dependencies {
     if (project.hasProperty('bowsModsDir')) runtimeOnly fileTree(dir: file(project.property('bowsModsDir')), includes: ['too_many_bows-*.jar'])
     if (project.hasProperty('ironModsDir')) runtimeOnly fileTree(dir: file(project.property('ironModsDir')), includes: ['irons_spellbooks-*.jar', 'irons_lib-*.jar', 'geckolib-neoforge-*.jar', 'player-animation-lib-forge-*.jar'])
     if (project.hasProperty('armorModsDir')) runtimeOnly fileTree(dir: file(project.property('armorModsDir')), includes: ['immersive_armors-*.jar'])
+    if (project.hasProperty('ritualsModsDir')) {
+        def ritualMods = fileTree(dir: file(project.property('ritualsModsDir')), includes: ['ritualsnotrolls-*.jar'])
+        compileOnly ritualMods
+        runtimeOnly ritualMods
+    }
     testImplementation platform('org.junit:junit-bom:5.11.4')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 sourceSets.main.resources.srcDir 'src/generated/resources'
+if (project.hasProperty('ritualsModsDir')) sourceSets.main.java.srcDir 'src/ritualTest/java'
 tasks.named('test', Test) { useJUnitPlatform() }
 tasks.named('processResources') { exclude '.cache/**'; inputs.property 'version', project.version; filesMatching('META-INF/neoforge.mods.toml') { expand version: project.version } }
 tasks.named('jar') { exclude 'com/cappleapple/racksnstands/gametest/**' }

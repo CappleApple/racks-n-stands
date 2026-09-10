@@ -1,16 +1,16 @@
 {
   "enchantment": "racksnstands:repairing",
   "levels": {
-    "1": 128,
-    "10": 1280,
-    "2": 256,
-    "3": 384,
-    "4": 512,
-    "5": 640,
-    "6": 768,
-    "7": 896,
-    "8": 1024,
-    "9": 1152
+    "1": 48,
+    "10": 2680,
+    "2": 128,
+    "3": 240,
+    "4": 336,
+    "5": 472,
+    "6": 760,
+    "7": 1120,
+    "8": 1560,
+    "9": 2080
   },
   "materials": [
     {
@@ -26,10 +26,28 @@
       "resource_value": 4
     },
     {
+      "id": "golden_apple",
+      "item": "minecraft:golden_apple",
+      "power": 48,
+      "resource_value": 6
+    },
+    {
       "id": "experience_bottle",
       "item": "minecraft:experience_bottle",
       "power": 64,
       "resource_value": 8
+    },
+    {
+      "id": "diamond",
+      "item": "minecraft:diamond",
+      "power": 80,
+      "resource_value": 10
+    },
+    {
+      "id": "heart_of_the_sea",
+      "item": "minecraft:heart_of_the_sea",
+      "power": 104,
+      "resource_value": 13
     },
     {
       "id": "echo_shard",

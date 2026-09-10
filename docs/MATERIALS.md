@@ -31,3 +31,12 @@ Example item:
 ```
 
 Operators can restore an original material with `/data remove block <x> <y> <z> Materials.<group>`, or remove `Materials` to restore all defaults. Use the lower block position for the Full Armor Stand.
+
+## Crafting
+
+- A customized fixture stack alone in any crafting-grid position produces the same stack with the `racksnstands:materials` component removed. Enchantments, names and every other component are preserved.
+- One customized stack plus one uncustomized stack of the **same fixture item** copies the customized appearance onto the entire uncustomized stack. The template is reusable and stays unchanged in a manual crafting grid; the target keeps its own enchantments and name, without receiving the template's enchantments.
+- Both 2x2 and 3x3 grids support batches of 1 through the item's stack limit. Take the output normally or with shift-click. Extra inputs, two customized inputs, or different fixture types do not match.
+- A vanilla Crafter also consumes the correct batch count; its output includes the unchanged template as a crafting remainder.
+
+The data-driven special recipe IDs are `racksnstands:reset_appearance` and `racksnstands:copy_appearance`.

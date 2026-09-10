@@ -13,7 +13,9 @@ public final class RecipeGameTests {
     public static void everyFixtureRecipeHasExactlyOneCraftingResult(GameTestHelper h) {
         var manager=h.getLevel().getRecipeManager();
         var recipes=manager.getAllRecipesFor(RecipeType.CRAFTING).stream().filter(r -> r.id().getNamespace().equals(RacksNStands.MOD_ID)).toList();
-        h.assertTrue(recipes.size()==13,"All 13 active fixture recipes are registered");
+        h.assertTrue(recipes.size()==15,"13 furniture recipes and two appearance recipes are registered");
+        recipes=recipes.stream().filter(r -> r.value() instanceof ShapedRecipe).toList();
+        h.assertTrue(recipes.size()==13,"All 13 furniture recipes remain distinct shaped recipes");
         for(var holder:recipes) {
             h.assertTrue(holder.value() instanceof ShapedRecipe,"Fixture recipes are shaped");
             var recipe=(ShapedRecipe)holder.value();int width=recipe.getWidth(),height=recipe.getHeight();

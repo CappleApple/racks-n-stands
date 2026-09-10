@@ -6,6 +6,17 @@ Validated on Windows, Java 21.0.12, Minecraft 1.21.1 and NeoForge 21.1.248 on 20
 
 
 
+## Version 1.4.0 validation
+
+- Datagen and build passed. All 33 JUnit tests passed, including full-size rack clamping, uniform bounds fitting, and visible sprite outlines that exclude transparent corners after rotation.
+- The standalone run passed all 55 required GameTests. The later Rituals Not Rolls run passed all 57 required tests, including an additional partial-inventory regression and the optional real-mod passive ritual test.
+- Appearance tests cover all 23 active and legacy fixture types; batch counts of 1, 17 and 64; reset and copy component preservation; invalid and mismatched inputs; actual 2x2 and 3x3 crafting menus with left-click, right-click and shift-click; reusable stacked templates; count conservation when only part of the output fits the inventory; and the vanilla Crafter's scheduled execution. These are server-side menu tests, not a claim of manual client mouse-crafting coverage.
+- With the installed Rituals Not Rolls implementation, the seven materials load into real knowledge pages/books and the automatic ritual solver reaches exactly Repairing V for books and every fixture type, with return chaining both disabled and enabled. No consumed resources, resource withdrawals or XP catalysts are needed. Omitting each material in turn leaves the baseline below V. This integration is a development-only test; the shipped integration remains a built-in datapack with no mod-presence or version checks.
+- A dedicated server and the final client loaded with Curios, Simply Swords, Simply More, Cataclysm, Too Many Bows, Iron's Spellbooks, Immersive Armors and Rituals Not Rolls; Jade was loaded client-side. The client connected and received the new recipes successfully. Representative vanilla and modded items were visually reviewed on all three rack sizes: [rack size clamp](screenshots/rack-size-clamp.png). This checks representative rendered items, not every third-party model or resource pack.
+- The final JAR validator passed: 27 block models, 858 faces, 23 display profiles, 15 recipes, current generated resources, and no bundled companion or QA classes.
+
+Logs: `build/visible-outline-build.log`, `build/appearance-standalone-tests.log`, `build/appearance-ritual-tests.log`, `build/appearance-client-review-server.log` and `build/visible-outline-client.log`.
+
 ## Version 1.3.2 validation
 
 - Build and all 29 JUnit tests passed. New geometry tests cover rotated asymmetric weapons, uniform proportions, all six compartments, lower-row shelf clearance, depth-limited models and small-item shelf contact.

@@ -20,6 +20,7 @@ public final class BuiltinProfiles {
             if(kind.slots()>1 && !kind.tall()) {
                 int cols=kind.slots()==6?3:kind.slots(),row=n/cols,col=n%cols;
                 x=(col+.5)/cols;y=kind.slots()==6?.80-row*.45:.54;s=kind.slots()==6?.40:(kind.slots()==4?.31:.56);
+                if(kind.wall()&&!kind.curio()) s=1;
                 if(kind.curio()) { z=kind.style().equals("curio_cabinet")?.7375:.30;s=.27; }
                 if(kind.style().equals("curio_cabinet")) { x=(3+5*col)/16.0;y=(row==0?8.5:2)/16.0+.001; }
                 bounds=new AABB((double)col/cols,kind.slots()==6?(row==0?.50:0):0,0,(col+1.0)/cols,kind.slots()==6?(row==0?1:.50):1,1);

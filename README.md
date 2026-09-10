@@ -8,7 +8,7 @@ Equipment furniture with one shared storage, filtering, interaction, and renderi
 
 Download the latest JAR from [GitHub Releases](https://github.com/CappleApple/racks-n-stands/releases). Report bugs on the [issue tracker](https://github.com/CappleApple/racks-n-stands/issues).
 
-Put `racksnstands-1.3.2.jar` in the client and server `mods` directories. Curios compatibility targets the 1.21.1 **9.5.1** API and is optional. A Repairing I–X datapack definition for Rituals Not Rolls is included in the JAR and is available to its normal data loader.
+Put `racksnstands-1.4.0.jar` in the client and server `mods` directories. Curios compatibility targets the 1.21.1 **9.5.1** API and is optional. A Repairing I–X datapack definition for Rituals Not Rolls is included in the JAR and is available to its normal data loader.
 
 The first release uses oak furniture, dark oak accents, metal supports, and fabric display forms. These are original baked cuboid models referring to Minecraft textures. Resource packs can replace the models and texture references. No assets or implementation were taken from another equipment-display mod.
 
@@ -23,6 +23,8 @@ Furniture items stack to 64. Only matching enchantments and sampled materials co
 - Empty-hand sneak + right-click a displayed Curio to equip it into a compatible functional slot, preferring empty slots. Occupied slots swap their previous Curio onto the display.
 - General furniture accepts any item. Only armor stands enforce an equipment slot; datapacks can add explicit filters.
 - Displays hold one item by default. Set `interaction.allow_full_stacks = true` to allow each general slot to hold a full stack. Natural item limits still apply; armor slots remain single-piece. Turning the option off preserves existing stored stacks.
+- Craft a customized stand/display stack by itself to reset its appearance; its enchantments, name and other data stay intact.
+- Craft a customized piece beside one uncustomized stack of the same fixture type to copy its appearance to the entire stack. The customized piece is returned unchanged, and each target keeps its own enchantments and other data.
 - Click the actual slot position on racks and shelves.
 - Apply a Repairing book to a fixture item in an anvil, or use Rituals Not Rolls when installed. Place the enchanted fixture to activate maintenance.
 - Hoppers and other standard item handlers obey the same filters. Comparators report occupancy from 0 to 15.
@@ -49,9 +51,11 @@ Fixture items and displayed gear are separate drops. Enchantments and customized
 
 All IDs use `racksnstands:`. These 13 designs are craftable and available in the creative tab. Ten retired specialty IDs remain registered to preserve placed blocks and their stored gear, but have no recipes or creative entries. There is no separate staff stand or necklace bust in the active catalog.
 
-Weapons and tools select their in-hand models on stands, pedestals and wall displays. The Large Item Rack and Display Shelf also use their 3D models, uniformly scaled to fit the width, height and depth of each compartment; shelf items rest on the shelf surfaces. Baked geometry retains the hand model's scale and is centered for furniture placement; native custom renderers retain their hand rendering path. Swords and other weapons point down; axes, hammers and tridents point up. The freestanding Display Stand holds weapons/tools sideways across its centered supports. Bow orientation is preserved. Bundled optional rules cover Simply Swords, Simply More, Cataclysm, Too Many Bows and Iron’s Spellbooks; packs can override item/tag rules. The pedestal extends a displayed sword into the air above its top. Fixture inventory, held and dropped models use normal Minecraft block transforms. Furniture hitboxes leave gaps between supports and keep shallow shelves against their wall. The Full Armor Stand has a wider torso hitbox and chest target. All armor stands face the placing player. Native armor-layer hooks support custom armor such as Immersive Armors and Iron’s Spellbooks; elytras use resting wings.
+Weapons and tools select their in-hand models on stands, pedestals and wall displays. All three item racks start at full model size and clamp oversized items to fit their slot width, height and depth. Models that already fit are not reduced. Display Shelf items also fit their compartments and rest on the shelf surfaces. Baked geometry retains the hand model's scale and is centered for furniture placement; native custom renderers retain their hand rendering path. Swords and other weapons point down; axes, hammers and tridents point up. The freestanding Display Stand holds weapons/tools sideways across its centered supports. Bow orientation is preserved. Bundled optional rules cover Simply Swords, Simply More, Cataclysm, Too Many Bows and Iron’s Spellbooks; packs can override item/tag rules. The pedestal extends a displayed sword into the air above its top. Fixture inventory, held and dropped models use normal Minecraft block transforms. Furniture hitboxes leave gaps between supports and keep shallow shelves against their wall. The Full Armor Stand has a wider torso hitbox and chest target. All armor stands face the placing player. Native armor-layer hooks support custom armor such as Immersive Armors and Iron’s Spellbooks; elytras use resting wings.
 
 ## Repairing
+
+The built-in Rituals Not Rolls definition has seven knowledge materials: iron ingot, amethyst shard, golden apple, experience bottle, diamond, heart of the sea and echo shard. Together they provide 472 passive power, enough for Repairing V on furniture or books with the default rules. No Consumption or Experience Catalysts are required. Higher tiers I-X remain defined for boosted rituals; materials and thresholds are listed in [compatibility documentation](docs/COMPATIBILITY.md).
 
 Repairs accumulate continuously and apply every **20 game ticks** by default. The rate is **20% of maximum durability per enchantment level over 3,600 seconds** of world game time. These are separate settings: `interval_ticks` controls update frequency, `calculation_period_seconds` controls the rate's time basis, and `percent_per_level` defaults to `0.2`.
 
@@ -78,6 +82,8 @@ python tools/validate_assets.py
 python tools/prepare_curios_tests.py
 .\gradlew.bat runGameTestServer -PwithCurios
 .\gradlew.bat runClient
+# Optional: pass the local folder containing Rituals Not Rolls for its integration GameTest.
+.\gradlew.bat runGameTestServer -PritualsModsDir="path/to/mods"
 ```
 
 Generated resources are checked in, so normal builds do not require datagen first. GameTest and visual-QA classes are excluded from the distributable JAR. Do not put the test datapack in a production world; it gives vanilla items test Curios metadata.

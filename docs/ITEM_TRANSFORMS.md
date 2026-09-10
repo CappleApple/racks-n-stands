@@ -34,7 +34,7 @@ A tag example limited to item racks:
 
 `items` and `item_tags` are alternative selectors; at least one must be present. Tag IDs do not include `#` in this format. An omitted or empty `fixtures` array allows the rule on every fixture. Fixture filtering does not grant item acceptance: the slot's ordinary item filter still applies.
 
-The Large Item Rack (`tool_rack`) and Display Shelf (`curio_cabinet`) intentionally use flat inventory previews for non-block items. Hand orientation rules are bypassed there, and measured bounds fit the preview within the compartment. Shelf profile Y positions anchor the item’s bottom on the shelf surface; displayed blocks retain their block geometry and also rest on the shelf.
+The Large Item Rack (`tool_rack`), Item Rack (`weapon_rack`) and Small Item Rack (`polearm_rack`) use in-hand geometry and the normal item orientation rules. Their base profile scale is 1: geometry that fits stays at full size, while larger models are uniformly clamped to each slot's width, height and depth after orientation and item-rule transforms. The Display Shelf (`curio_cabinet`) also fits 3D models; its profile Y positions anchor the bottom on the shelf surface, with the lower row's shorter clearance respected. Blocks retain their block geometry and are fitted too.
 
 The highest-priority matching rule wins. Equal priorities use the rule resource location in ascending alphabetical order. Rules do not accumulate. To replace a built-in rule completely, override its exact file path. To override only selected items, give your rule a higher priority.
 

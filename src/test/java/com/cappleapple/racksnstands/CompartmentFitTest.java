@@ -53,6 +53,19 @@ class CompartmentFitTest {
         assertEquals(.21,rack.scale()*bounds.getZsize(),1e-7);
     }
 
+    @Test void allRackSizesOnlyShrinkModelsThatExceedTheirSpace() {
+        for(int slots:new int[]{3,4,6}) {
+            var small=new AABB(-.08,-.15,-.04,.08,.15,.04);
+            assertEquals(1,CompartmentFit.of(small,false,0,slots).scale(),"Full-size models that fit stay at full size");
+            var large=new AABB(-1,-2,-.5,1,2,.5);
+            var fit=CompartmentFit.of(large,false,0,slots);
+            assertTrue(fit.scale()<1);
+            assertTrue(large.getXsize()*fit.scale()<=1.0/(slots==6?3:slots)-.04+1e-7);
+            assertTrue(large.getYsize()*fit.scale()<=(slots==6?.40:.78)+1e-7);
+            assertTrue(large.getZsize()*fit.scale()<=.21+1e-7);
+        }
+    }
+
     @Test void smallItemsKeepTheirSizeAndShelfContact() {
         var fit=CompartmentFit.of(new AABB(.2,.4,-.1,.3,.5,0),true,3);
         assertEquals(1,fit.scale());
