@@ -1,105 +1,136 @@
 # Racks N' Stands
 
-Minecraft **1.21.1**, NeoForge **21.1.248+**, Java **21**. Mod ID: `racksnstands`. Java namespace: `com.cappleapple.racksnstands`.
+Racks N' Stands adds equipment furniture for displaying, swapping, and slowly repairing gear.
 
-Equipment furniture with one shared storage, filtering, interaction, and rendering framework. Furniture chooses the presentation. The real **Repairing I–X** treasure enchantment supplies maintenance power. Crafting materials never change repair strength.
+The mod includes armor stands/mannequins, weapon and tool racks, pedestals, wall displays, shelves, and smaller equipment stands. Furniture can inherit block textures for pack-friendly visual customization, while the **Repairing I–X** enchantment controls passive repair speed.
 
-## Install
+Built for Minecraft 1.21.1 / NeoForge.
 
-Download the latest JAR from [GitHub Releases](https://github.com/CappleApple/racks-n-stands/releases). Report bugs on the [issue tracker](https://github.com/CappleApple/racks-n-stands/issues).
+## Using the furniture
 
-Put `racksnstands-1.4.0.jar` in the client and server `mods` directories. Curios compatibility targets the 1.21.1 **9.5.1** API and is optional. A Repairing I–X datapack definition for Rituals Not Rolls is included in the JAR and is available to its normal data loader.
+Most displays work directly in-world rather than through a container screen.
 
-The first release uses oak furniture, dark oak accents, metal supports, and fabric display forms. These are original baked cuboid models referring to Minecraft textures. Resource packs can replace the models and texture references. No assets or implementation were taken from another equipment-display mod.
+- Right-click a display slot to insert, remove, or swap an item.
+- Armor furniture only accepts equipment for the appropriate body slot.
+- The Full Armor Stand can swap an entire armor set with the player at once.
+- Empty-hand sneak + right-click performs the fixture's equipment-swap action.
+- Curios displays can equip a stored Curio into a compatible slot when Curios is installed.
+- Hoppers and other NeoForge item handlers can interact with fixtures while respecting their filters.
+- Comparators output an occupancy signal.
 
-## Use
+General-purpose displays hold one item per slot by default. Packs that want storage-style racks can enable full stacks in the common config; armor slots remain single-item.
 
-Furniture items stack to 64. Only matching enchantments and sampled materials combine in a stack.
+## Furniture
 
-- Click anywhere on the Full Armor Stand with armor to insert or replace that armor's matching slot. Empty-hand removal targets the clicked part.
-- Right-click a slot to insert, take, or exchange the held item. Occupied slots swap silently; invalid armor is ignored.
-- Sneak + right-click a furniture part with any block item to copy its texture to all matching material parts on that fixture. The sample is not consumed. The pedestal base, body, and cap are separate groups.
-- Sneak + right-click without a block item to exchange equipped items. Armor stands swap their bound equipment slots; the Full Armor Stand swaps all four atomically. General displays use the displayed item's equipment slot, falling back to the main hand.
-- Empty-hand sneak + right-click a displayed Curio to equip it into a compatible functional slot, preferring empty slots. Occupied slots swap their previous Curio onto the display.
-- General furniture accepts any item. Only armor stands enforce an equipment slot; datapacks can add explicit filters.
-- Displays hold one item by default. Set `interaction.allow_full_stacks = true` to allow each general slot to hold a full stack. Natural item limits still apply; armor slots remain single-piece. Turning the option off preserves existing stored stacks.
-- Craft a customized stand/display stack by itself to reset its appearance; its enchantments, name and other data stay intact.
-- Craft a customized piece beside one uncustomized stack of the same fixture type to copy its appearance to the entire stack. The customized piece is returned unchanged, and each target keeps its own enchantments and other data.
-- Click the actual slot position on racks and shelves.
-- Apply a Repairing book to a fixture item in an anvil, or use Rituals Not Rolls when installed. Place the enchanted fixture to activate maintenance.
-- Hoppers and other standard item handlers obey the same filters. Comparators report occupancy from 0 to 15.
+The active set includes:
 
-Fixture items and displayed gear are separate drops. Enchantments and customized materials survive survival fixture drops and re-placement. Customized materials also appear on inventory, held, and dropped fixture models. Creative insertion transfers the held item; creative breaking drops stored gear once and does not duplicate the fixture.
+| Fixture | Slots | Use |
+| --- | ---: | --- |
+| Full Armor Stand (`armor_mannequin`) | 4 | Full worn armor + loadout swapping |
+| Helmet Stand | 1 | Helmet display |
+| Chestplate Stand | 1 | Chest / elytra display |
+| Leggings Stand | 1 | Leg armor display |
+| Boots Stand | 1 | Boots display |
+| Large Item Rack | 6 | General weapons/tools |
+| Item Rack | 4 | General weapons/tools |
+| Small Item Rack | 3 | Narrow/polearm display |
+| Floor Stand | 1 | Horizontal weapon/tool display |
+| Pedestal | 1 | Full-height item display |
+| Wall Display | 1 | Wall-mounted item |
+| Surface Display | 1 | Floor/wall/ceiling display |
+| Display Shelf | 6 | Curios/general items |
 
-## Fixtures
+Older registered fixture IDs remain available for world compatibility even when they are no longer craftable.
 
-| Fixture ID | Slots | Purpose |
-|---|---:|---|
-| `armor_mannequin` | 4 | Full Armor Stand; helmet, chest, legs, boots and atomic loadout exchange |
-| `helmet_stand` | 1 | Worn helmet |
-| `chestplate_stand` | 1 | Torso / bust |
-| `leggings_stand` | 1 | Worn leggings |
-| `boots_stand` | 1 | Worn boots |
-| `tool_rack` | 6 | Large Item Rack; any items |
-| `weapon_rack` | 4 | Item Rack; any items |
-| `polearm_rack` | 3 | Small Item Rack; any items |
-| `sword_floor_stand` | 1 | Display Stand; horizontal weapon/tool presentation across centered supports |
-| `generic_pedestal` | 1 | Full-height Recessed Pedestal; embedded blade with its hilt above the block |
-| `generic_wall_display` | 1 | Wall presentation; any item |
-| `generic_tabletop_display` | 1 | Display; mounts on floors, walls or ceilings; any item |
-| `curio_cabinet` | 6 | Wall-mounted Display Shelf; any items |
+## Item rendering
 
-All IDs use `racksnstands:`. These 13 designs are craftable and available in the creative tab. Ten retired specialty IDs remain registered to preserve placed blocks and their stored gear, but have no recipes or creative entries. There is no separate staff stand or necklace bust in the active catalog.
+Racks N' Stands tries to display equipment using the model players recognize from their hands rather than flattening everything into inventory icons.
 
-Weapons and tools select their in-hand models on stands, pedestals and wall displays. All three item racks start at full model size and clamp oversized items to fit their slot width, height and depth. Models that already fit are not reduced. Display Shelf items also fit their compartments and rest on the shelf surfaces. Baked geometry retains the hand model's scale and is centered for furniture placement; native custom renderers retain their hand rendering path. Swords and other weapons point down; axes, hammers and tridents point up. The freestanding Display Stand holds weapons/tools sideways across its centered supports. Bow orientation is preserved. Bundled optional rules cover Simply Swords, Simply More, Cataclysm, Too Many Bows and Iron’s Spellbooks; packs can override item/tag rules. The pedestal extends a displayed sword into the air above its top. Fixture inventory, held and dropped models use normal Minecraft block transforms. Furniture hitboxes leave gaps between supports and keep shallow shelves against their wall. The Full Armor Stand has a wider torso hitbox and chest target. All armor stands face the placing player. Native armor-layer hooks support custom armor such as Immersive Armors and Iron’s Spellbooks; elytras use resting wings.
+Items are fitted to the available space while keeping their proportions. Default orientation rules distinguish things such as swords, axes/hammers, bows, tridents, and pedestal weapons, and packs can replace or extend those rules with item/tag profiles.
+
+There are built-in optional rules for several weapon/content mods, including Simply Swords, Simply More, Cataclysm, Too Many Bows, and Iron's Spellbooks.
+
+Detailed transform/profile documentation:
+
+- [Item transforms](docs/ITEM_TRANSFORMS.md)
+- [Packmaker profiles and filters](docs/PACKMAKERS.md)
+
+## Material customization
+
+Sneak + right-click a fixture with a block item to sample that block's texture onto the selected furniture material group. The block is not consumed.
+
+Some furniture has multiple independently sampled groups—for example, a pedestal can have a different base, body, and cap.
+
+The customization survives breaking/placing the fixture and is also visible on its inventory/held model.
+
+A customized fixture can be crafted by itself to reset its material appearance, or used as a template to copy its appearance onto an uncustomized stack of the same fixture.
+
+See [docs/MATERIALS.md](docs/MATERIALS.md) for pack/resource details.
 
 ## Repairing
 
-The built-in Rituals Not Rolls definition has seven knowledge materials: iron ingot, amethyst shard, golden apple, experience bottle, diamond, heart of the sea and echo shard. Together they provide 472 passive power, enough for Repairing V on furniture or books with the default rules. No Consumption or Experience Catalysts are required. Higher tiers I-X remain defined for boosted rituals; materials and thresholds are listed in [compatibility documentation](docs/COMPATIBILITY.md).
+The **Repairing** enchantment belongs to the furniture, not the stored item. Any normal durability item placed on an enchanted fixture slowly repairs while it remains there.
 
-Repairs accumulate continuously and apply every **20 game ticks** by default. The rate is **20% of maximum durability per enchantment level over 3,600 seconds** of world game time. These are separate settings: `interval_ticks` controls update frequency, `calculation_period_seconds` controls the rate's time basis, and `percent_per_level` defaults to `0.2`.
+The default rate is:
 
-Each update earns `maxDurability * percent_per_level * level * elapsedTicks / (calculation_period_seconds * 20)` durability. Fractional points carry into later updates, so changing update frequency does not change repair speed. Repairing I restores 20% per hour; Repairing V restores 100% per hour. Missing durability determines time to completion, and completed items never bank surplus repair.
-
-Elapsed game time and fractional progress persist across chunk unloads and world saves. On chunk reload, maintenance applies the accumulated repair once. No chunks are force-loaded, and time while the server is stopped does not count. If unloaded catch-up is disabled, earned loaded time before the save still survives. Slot exchanges settle earned repairs before moving gear, then reset the incoming item's fractional credit.
-
-Look at a stored armor piece or durable item to see its current/max durability and time until fully repaired. A translucent light-blue bar follows the selected item, including the upper half of the Full Armor Stand. It shows no slot number or armor-slot name, and its durability label has no shadow. With Jade installed, that information appears in Jade; otherwise a compact native HUD appears at the top of the screen. The client option `rendering.show_repair_tooltip` controls it. Progress uses server-synchronized rates and timestamps, including after live config changes.
-
-Repair particles and sounds have independent enable switches. Sounds play after each stored item restores `repair_sound_interval_percent` percent of its maximum durability (default `1.0`, meaning 1%). Sound progress survives saves and chunk unloads, while large catch-up batches produce at most one sound per fixture update. `repair_sound_volume` defaults to `0.15` and `repair_sound_pitch` to `1.7`; all these settings update live.
-
-Repair affects Minecraft durability only. Idle fixtures have no block-entity ticker; eligible fixtures use configurable scheduled block ticks. Fraction-only bookkeeping does not send an inventory packet every update. Actual durability changes synchronize the item and progress snapshot.
-
-Configuration is in `config/racksnstands-common.toml` and `config/racksnstands-client.toml`. Saved TOML edits apply automatically while the game is running; no `/reload` or restart is needed. Common settings apply on the server, and rendering settings apply on each client. The client render-distance default is 64 blocks. See [packmaker documentation](docs/PACKMAKERS.md) for all settings and acquisition overrides.
-
-## Build and test
-
-```powershell
-.\gradlew.bat runData
-.\gradlew.bat test build
-.\gradlew.bat runGameTestServer
-.\gradlew.bat runGameTestServer -PwithJade
-python tools/validate_assets.py
-python tools/prepare_curios_tests.py
-.\gradlew.bat runGameTestServer -PwithCurios
-.\gradlew.bat runClient
-# Optional: pass the local folder containing Rituals Not Rolls for its integration GameTest.
-.\gradlew.bat runGameTestServer -PritualsModsDir="path/to/mods"
+```text
+20% of the item's maximum durability
+per Repairing level
+per 3600 seconds of world game time
 ```
 
-Generated resources are checked in, so normal builds do not require datagen first. GameTest and visual-QA classes are excluded from the distributable JAR. Do not put the test datapack in a production world; it gives vanilla items test Curios metadata.
+So with defaults:
 
-The test server uses vanilla empty templates, so `minecraft` and `racksnstands` must both be enabled in its GameTest namespace setting. Check for **All required tests passed** in the log: a launcher exit code alone does not prove tests ran.
+- Repairing I restores 20% of max durability per hour.
+- Repairing V restores 100% per hour.
+
+Repair progress is calculated continuously and applied on a configurable interval. Fractional progress is carried forward, so changing the update interval does not change the effective repair rate.
+
+Unloaded fixtures can catch up from elapsed **world game time** when their chunk loads again. The mod does not force-load chunks, and server-offline time is not counted.
+
+Repairing only affects normal Minecraft durability.
+
+## Repair HUD
+
+Looking at a repairable stored item shows its current/max durability and estimated time until full repair.
+
+If Jade is installed, that information is added to Jade. Otherwise the mod uses its own compact HUD.
+
+This can be disabled in the client config.
+
+## Rituals Not Rolls
+
+Racks N' Stands includes optional Rituals Not Rolls data for acquiring Repairing through its enchanting system.
+
+The default material set provides enough passive power for Repairing V under the shipped Rituals Not Rolls rules. Rituals Not Rolls is not required for the furniture or repair mechanic itself.
+
+See [docs/COMPATIBILITY.md](docs/COMPATIBILITY.md) for the material values and optional-mod behavior.
+
+## Configuration
+
+```text
+config/racksnstands-common.toml
+config/racksnstands-client.toml
+```
+
+Common settings cover storage/automation, Repairing rate/timing, unloaded catch-up, sounds, and related gameplay behavior. Client settings cover rendering distance and the repair overlay.
+
+Config files are watched while the game is running, so supported changes can take effect without a restart.
+
+Full packmaker/config reference: [docs/PACKMAKERS.md](docs/PACKMAKERS.md).
 
 ## Documentation
 
-- [Block texture customization](docs/MATERIALS.md)
-- [Per-item and item-tag orientation, scale and offset](docs/ITEM_TRANSFORMS.md)
-- [Packmaker profiles, tags, predicates, configuration, and recipes](docs/PACKMAKERS.md)
-- [Curios and Rituals Not Rolls integration](docs/COMPATIBILITY.md)
-- [Public API and lifecycle](docs/API.md)
-- [Performance scenes and validation evidence](docs/VALIDATION.md)
+- [Material customization](docs/MATERIALS.md)
+- [Item orientation/scale/offset rules](docs/ITEM_TRANSFORMS.md)
+- [Packmaker configuration, profiles, predicates, and recipes](docs/PACKMAKERS.md)
+- [Curios and Rituals Not Rolls compatibility](docs/COMPATIBILITY.md)
+- [Public API](docs/API.md)
+- [Testing and performance notes](docs/VALIDATION.md)
 
-Development commands require permission level 2:
+## Development commands
+
+Commands below require permission level 2:
 
 ```text
 /racksnstands debug config
@@ -107,9 +138,21 @@ Development commands require permission level 2:
 /racksnstands debug repairing
 /racksnstands debug classification
 /racksnstands reload_displays
-/racksnstands debug scene 100
-/racksnstands debug scene 500
-/racksnstands debug scene 1000
 ```
 
-The first three inspect the targeted slot and held item. `reload_displays` performs a normal server `/reload`, then synchronizes the authoritative profiles. Scene commands create furniture in an empty grid offset from the command origin and refuse to replace existing blocks.
+There are also debug-scene commands for building larger furniture layouts during rendering/performance testing.
+
+## Building
+
+Requires Java 21.
+
+```powershell
+.\gradlew.bat runData
+.\gradlew.bat test build
+.\gradlew.bat runGameTestServer
+.\gradlew.bat runClient
+```
+
+Generated resources are committed, so ordinary builds do not require datagen first.
+
+Development/GameTest fixtures are excluded from the release jar.
