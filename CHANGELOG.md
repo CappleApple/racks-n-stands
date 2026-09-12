@@ -1,3 +1,11 @@
+# 1.4.1 - 2026-09-12
+
+## Changed
+
+- Furniture recipes accept tagged planks, wooden rods, iron ingots, wooden slabs, stone bricks, wooden chests, and carved pumpkins.
+- Individual chestplate, leggings, and boots stands accept any armor piece in the corresponding vanilla armor tag.
+- Wooden furniture recipes unlock with any tagged planks; the Recessed Pedestal recipe unlocks with any tagged stone bricks.
+
 # 1.4.0 - 2026-09-09
 
 ## Added

@@ -26,6 +26,22 @@ public final class FixtureData implements DataProvider {
     public static JsonArray array(Object... entries) { return new Gson().toJsonTree(entries).getAsJsonArray(); }
     private static JsonObject tag(Object... entries) { return object("replace",false,"values",array(entries)); }
     private static JsonObject optionalTag(String id) { return object("id","#"+id,"required",false); }
+    private static JsonObject ingredient(String item) {
+        String tag=switch(item) {
+            case "oak_planks" -> "minecraft:planks";
+            case "stick" -> "c:rods/wooden";
+            case "iron_ingot" -> "c:ingots/iron";
+            case "oak_slab" -> "minecraft:wooden_slabs";
+            case "stone_bricks" -> "minecraft:stone_bricks";
+            case "chest" -> "c:chests/wooden";
+            case "carved_pumpkin" -> "c:pumpkins/carved";
+            case "leather_chestplate" -> "minecraft:chest_armor";
+            case "leather_leggings" -> "minecraft:leg_armor";
+            case "leather_boots" -> "minecraft:foot_armor";
+            default -> null;
+        };
+        return tag==null?object("item","minecraft:"+item):object("tag",tag);
+    }
     @Override public CompletableFuture<?> run(CachedOutput cache) {
         var files=resources();
         return CompletableFuture.allOf(files.entrySet().stream().map(e -> DataProvider.saveStable(cache,e.getValue(),output.resolve(e.getKey()))).toArray(CompletableFuture[]::new));
@@ -82,10 +98,13 @@ public final class FixtureData implements DataProvider {
                 default -> array("W W"," C ","WSW");
             };
             var recipe=object("type","minecraft:crafting_shaped","category","decorations","pattern",pattern,
-                "key",object("W",object("item","minecraft:oak_planks"),"S",object("item","minecraft:stick"),"C",object("item","minecraft:"+center)),"result",object("id",full,"count",1));
-            if(kind.style().equals("pedestal")) recipe.add("key",object("W",object("item","minecraft:stone_bricks"),"S",object("item","minecraft:smooth_stone"),"C",object("item","minecraft:iron_ingot")));
+                "key",object("W",ingredient("oak_planks"),"S",ingredient("stick"),"C",ingredient(center)),"result",object("id",full,"count",1));
+            if(kind.style().equals("pedestal")) recipe.add("key",object("W",ingredient("stone_bricks"),"S",ingredient("smooth_stone"),"C",ingredient("iron_ingot")));
             files.put("data/racksnstands/recipe/"+id+".json",recipe);
-            files.put("data/racksnstands/advancement/recipes/"+id+".json",object("parent","minecraft:recipes/root","criteria",object("has_planks",object("trigger","minecraft:inventory_changed","conditions",object("items",array(object("items","minecraft:oak_planks"))))),"requirements",array(array("has_planks")),"rewards",object("recipes",array(full))));
+            boolean pedestal=kind.style().equals("pedestal");
+            String criterion=pedestal?"has_stone_bricks":"has_planks";
+            String unlockTag=pedestal?"#minecraft:stone_bricks":"#minecraft:planks";
+            files.put("data/racksnstands/advancement/recipes/"+id+".json",object("parent","minecraft:recipes/root","criteria",object(criterion,object("trigger","minecraft:inventory_changed","conditions",object("items",array(object("items",unlockTag))))),"requirements",array(array(criterion)),"rewards",object("recipes",array(full))));
         }
         files.put("assets/racksnstands/models/block/empty.json",object("textures",object("particle","minecraft:block/oak_planks"),"elements",array()));
         files.put("assets/racksnstands/lang/en_us.json",lang);

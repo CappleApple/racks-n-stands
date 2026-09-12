@@ -19,6 +19,7 @@ Current automated coverage includes:
 - armor insertion/replacement and whole-set swapping;
 - item-count conservation during exchanges/crafting;
 - material sampling and copied/reset appearance components;
+- tagged recipe ingredients, recipe-book unlocks, and recipe overlap;
 - block/item model geometry and fitting bounds;
 - item orientation/profile rules;
 - Repairing arithmetic, fractional carry, catch-up, ETA, and save/load behavior;
@@ -89,6 +90,18 @@ Material sampling should be checked with more than opaque cubes. Include at leas
 After sampling, break/re-place the fixture and check its item/held rendering as well as the world model.
 
 Copy/reset crafting should preserve unrelated components and item counts.
+
+## Crafting
+
+Recipe changes should be checked against the loaded item tags, including optional mods that add ingredients.
+
+- Substitute every tag member at each ingredient position.
+- Mix valid materials within a recipe, such as different wood types.
+- Check normal, mirrored, and offset layouts.
+- Compare ingredient intersections between recipes to catch overlapping layouts that only appear with particular tag combinations.
+- Trigger recipe-book unlocks with alternative materials, including non-oak planks and stone-brick variants.
+
+The accepted tags and remaining exact ingredients are listed in [recipe ingredients](PACKMAKERS.md#recipe-ingredients).
 
 ## Rituals Not Rolls
 

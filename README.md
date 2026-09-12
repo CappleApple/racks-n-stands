@@ -4,7 +4,7 @@ Racks N' Stands adds equipment furniture for displaying, swapping, and slowly re
 
 The mod includes armor stands/mannequins, weapon and tool racks, pedestals, wall displays, shelves, and smaller equipment stands. Furniture can inherit block textures for pack-friendly visual customization, while the **Repairing I–X** enchantment controls passive repair speed.
 
-Built for Minecraft 1.21.1 / NeoForge.
+Requires Minecraft 1.21.1, NeoForge 21.1.248 or newer, and Java 21. Install the mod on both the client and server.
 
 ## Using the furniture
 
@@ -20,6 +20,8 @@ Most displays work directly in-world rather than through a container screen.
 
 General-purpose displays hold one item per slot by default. Packs that want storage-style racks can enable full stacks in the common config; armor slots remain single-item.
 
+Recipes accept tagged materials, including mixed wood types and matching modded ingredients. The recipe book unlocks wooden furniture with any tagged planks and the Recessed Pedestal with any tagged stone bricks. Ingredient choices do not change the furniture appearance; use material customization for that. See [recipe ingredients](docs/PACKMAKERS.md#recipe-ingredients) for the accepted tags.
+
 ## Furniture
 
 The active set includes:
@@ -34,10 +36,10 @@ The active set includes:
 | Large Item Rack | 6 | General weapons/tools |
 | Item Rack | 4 | General weapons/tools |
 | Small Item Rack | 3 | Narrow/polearm display |
-| Floor Stand | 1 | Horizontal weapon/tool display |
-| Pedestal | 1 | Full-height item display |
+| Display Stand | 1 | Horizontal weapon/tool display |
+| Recessed Pedestal | 1 | Full-height item display |
 | Wall Display | 1 | Wall-mounted item |
-| Surface Display | 1 | Floor/wall/ceiling display |
+| Display | 1 | Floor/wall/ceiling display |
 | Display Shelf | 6 | Curios/general items |
 
 Older registered fixture IDs remain available for world compatibility even when they are no longer craftable.

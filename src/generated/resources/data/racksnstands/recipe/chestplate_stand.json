@@ -3,13 +3,13 @@
   "category": "decorations",
   "key": {
     "C": {
-      "item": "minecraft:leather_chestplate"
+      "tag": "minecraft:chest_armor"
     },
     "S": {
-      "item": "minecraft:stick"
+      "tag": "c:rods/wooden"
     },
     "W": {
-      "item": "minecraft:oak_planks"
+      "tag": "minecraft:planks"
     }
   },
   "pattern": [

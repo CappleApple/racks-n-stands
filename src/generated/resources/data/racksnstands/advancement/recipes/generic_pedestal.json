@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_planks": {
+    "has_stone_bricks": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:oak_planks"
+            "items": "#minecraft:stone_bricks"
           }
         ]
       },
@@ -14,7 +14,7 @@
   },
   "requirements": [
     [
-      "has_planks"
+      "has_stone_bricks"
     ]
   ],
   "rewards": {

@@ -67,6 +67,27 @@ Shipped tags under `data/racksnstands/tags/item/` are `tools`, `swords`, `weapon
 
 Datapack profiles synchronize on player login and server reload. Clients do not need the datapack separately. Texture/model overrides remain ordinary client resource packs.
 
+## Recipe ingredients
+
+Furniture recipes are generated under `data/racksnstands/recipe/<fixture_id>.json`. Patterns and outputs stay the same when substituting tagged ingredients, and different members of a tag can be mixed within one recipe.
+
+| Ingredient | Item tag |
+|---|---|
+| Planks | `minecraft:planks` |
+| Wooden rods | `c:rods/wooden` |
+| Iron ingots | `c:ingots/iron` |
+| Wooden slabs | `minecraft:wooden_slabs` |
+| Stone bricks | `minecraft:stone_bricks` |
+| Wooden chests | `c:chests/wooden` |
+| Carved pumpkins | `c:pumpkins/carved` |
+| Chest armor | `minecraft:chest_armor` |
+| Leg armor | `minecraft:leg_armor` |
+| Foot armor | `minecraft:foot_armor` |
+
+Armor ingredients are consumed like other crafting ingredients. `minecraft:armor_stand`, `minecraft:item_frame`, and `minecraft:smooth_stone` remain exact ingredients. Material substitutions produce the default furniture appearance; texture customization is separate.
+
+Add modded items to these tags through datapacks. For example, iron-ingot entries belong in `data/c/tags/item/ingots/iron.json`. Recipe-book unlocks also use tags: any planks unlock wooden furniture, and any stone bricks unlock the Recessed Pedestal.
+
 ## Configuration
 
 `config/racksnstands-common.toml`:
