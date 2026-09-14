@@ -126,7 +126,7 @@ Full packmaker/config reference: [docs/PACKMAKERS.md](docs/PACKMAKERS.md).
 - [Material customization](docs/MATERIALS.md)
 - [Item orientation/scale/offset rules](docs/ITEM_TRANSFORMS.md)
 - [Packmaker configuration, profiles, predicates, and recipes](docs/PACKMAKERS.md)
-- [Curios and Rituals Not Rolls compatibility](docs/COMPATIBILITY.md)
+- [Optional mod compatibility](docs/COMPATIBILITY.md)
 - [Public API](docs/API.md)
 - [Testing and performance notes](docs/VALIDATION.md)
 

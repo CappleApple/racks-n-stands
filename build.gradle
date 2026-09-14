@@ -24,7 +24,7 @@ neoForge {
             data()
             programArguments.addAll '--mod', 'racksnstands', '--all', '--output', file('src/generated/resources').absolutePath, '--existing', file('src/main/resources').absolutePath
         }
-        gameTestServer { type = 'gameTestServer'; gameDirectory = file('run-gametest') }
+        gameTestServer { type = 'gameTestServer'; gameDirectory = file(project.hasProperty('sableModsDir') ? 'run-sable-gametest' : 'run-gametest') }
     }
     mods { racksnstands { sourceSet sourceSets.main } }
     unitTest { enable(); testedMod = mods.racksnstands }
@@ -49,12 +49,35 @@ dependencies {
         compileOnly ritualMods
         runtimeOnly ritualMods
     }
+    if (project.hasProperty('sableModsDir')) {
+        def sableMods = fileTree(dir: file(project.property('sableModsDir')), includes: ['sable-neoforge-*.jar'])
+        if (sableMods.files.size() != 1) throw new GradleException('sableModsDir must contain exactly one sable-neoforge JAR')
+        compileOnly sableMods
+        runtimeOnly sableMods
+        def extractSableTestLibraries = tasks.register('extractSableTestLibraries', Sync) {
+            from({ zipTree(sableMods.singleFile) }) {
+                include 'META-INF/jarjar/*.jar'
+                eachFile { path = name }
+                includeEmptyDirs = false
+            }
+            into layout.buildDirectory.dir('sable-test-libraries')
+        }
+        compileOnly files(provider { fileTree(extractSableTestLibraries.get().destinationDir) { include '*.jar' } }).builtBy(extractSableTestLibraries)
+        if (project.hasProperty('withAeronautics')) {
+            for (pattern in ['create-1.21.1-*.jar', 'create-aeronautics-bundled-*.jar']) {
+                def companionMod = fileTree(dir: file(project.property('sableModsDir')), includes: [pattern])
+                if (companionMod.files.size() != 1) throw new GradleException("sableModsDir must contain exactly one ${pattern} JAR")
+                runtimeOnly companionMod
+            }
+        }
+    }
     testImplementation platform('org.junit:junit-bom:5.11.4')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 sourceSets.main.resources.srcDir 'src/generated/resources'
 if (project.hasProperty('ritualsModsDir')) sourceSets.main.java.srcDir 'src/ritualTest/java'
+if (project.hasProperty('sableModsDir')) sourceSets.main.java.srcDir 'src/sableTest/java'
 tasks.named('test', Test) { useJUnitPlatform() }
 tasks.named('processResources') { exclude '.cache/**'; inputs.property 'version', project.version; filesMatching('META-INF/neoforge.mods.toml') { expand version: project.version } }
 tasks.named('jar') { exclude 'com/cappleapple/racksnstands/gametest/**' }

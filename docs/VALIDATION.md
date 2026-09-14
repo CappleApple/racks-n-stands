@@ -44,6 +44,21 @@ Use the matching runtime when changing one of these integrations rather than rel
 
 The Gradle project includes focused runs for Curios/Jade and can be pointed at a local Rituals Not Rolls mods directory.
 
+## Sable / Create Aeronautics
+
+The standalone suite checks inventory clearing, saved item components, full-stack racks, both removal orders of the Full Armor Stand, and normal item drops after a transfer. The optional suite uses real Sable sub-level assembly and its reverse block-transfer path.
+
+Set `sableModsDir` to a local mods directory containing exactly one `sable-neoforge-*.jar`:
+
+```powershell
+.\gradlew.bat runGameTestServer "-PsableModsDir=<mods-directory>"
+.\gradlew.bat runGameTestServer "-PsableModsDir=<mods-directory>" -PwithAeronautics
+```
+
+Replace `<mods-directory>` with the installed mods directory. The second command also loads `create-1.21.1-*.jar` and `create-aeronautics-bundled-*.jar` from it. Their bundled dependencies are loaded normally. These runs use `run-sable-gametest/`, separate from the standalone test world. Sable test sources and extracted compile libraries are enabled only for this test setup; they are excluded from the release JAR.
+
+The 1.4.2 fix passed 33 unit tests, 67 standalone server GameTests, and 72 server GameTests with Sable 2.0.5. The 72-test suite also passed with Create 6.0.10 and Create Aeronautics 1.3.2 loaded on NeoForge 21.1.248. The five Sable cases cover rack and mannequin transfers in both directions, both mannequin removal orders, item components, appearance, repair progress, and ordinary breaking aboard ships. Ship creation, transfer, and cleanup are separated by server ticks so Sable can finish its plot updates. These checks exercise server behavior; client ship controls and visual rendering were not manually tested for this fix.
+
 ## Client checks
 
 Rendering is intentionally checked in a real development client because baked item/armor models can behave differently from pure geometry tests.

@@ -1,3 +1,10 @@
+# 1.4.2 - 2026-09-13
+
+## Fixed
+
+- Stored equipment duplicating onto the ground when fixtures move into or out of Sable / Create Aeronautics ships.
+- Full Armor Stands destroying their other half during ship transitions.
+
 # 1.4.1 - 2026-09-12
 
 ## Changed

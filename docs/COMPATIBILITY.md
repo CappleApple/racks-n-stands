@@ -1,5 +1,11 @@
 # Optional companions
 
+## Sable / Create Aeronautics
+
+Stored equipment stays in the fixture when it is assembled into a Sable ship or returned to the world. Moving a Full Armor Stand also preserves both halves. Breaking a fixture normally still drops its equipment once.
+
+Fixtures implement Minecraft's `Clearable` inventory contract, which Sable uses after saving the source block entity, and respect the moving-block removal flag. This requires no Sable dependency or configuration. The transfer path was tested with Sable 2.0.5 and Create Aeronautics 1.3.2 / Create 6.0.10. No rendering or physics adapters are included.
+
 ## Curios
 
 The sole class importing Curios is `compat.curios.InstalledCurios`. Its entry is guarded by `ModList` and the integration setting. Curios is compile-only and is not embedded in the JAR. Without it, the base mod loads, gear remains stored, and Curios-only filters reject new items unless another positive rule explicitly admits them.

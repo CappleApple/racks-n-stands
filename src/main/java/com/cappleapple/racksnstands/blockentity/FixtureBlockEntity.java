@@ -17,6 +17,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.*;
+import net.minecraft.world.Clearable;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.block.Block;
@@ -26,7 +27,7 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.items.IItemHandler;
 import java.util.*;
 
-public final class FixtureBlockEntity extends BlockEntity implements DisplayFixture,RepairingHost {
+public final class FixtureBlockEntity extends BlockEntity implements DisplayFixture,RepairingHost,Clearable {
     private final ItemStack[] items;
     private volatile MaterialPalette materials=MaterialPalette.EMPTY;
     public MaterialPalette materials() { return materials; }
@@ -267,6 +268,14 @@ public final class FixtureBlockEntity extends BlockEntity implements DisplayFixt
     }
     private void changed() { refreshRepairRates();visibleChanged();schedule(); }
     public int comparator() { int occupied=0;for(var stack:items) if(!stack.isEmpty()) occupied++;return occupied==0?0:Math.max(1,15*occupied/items.length); }
+    /** Sable and vanilla block transfers clear the source inventory after saving its data. */
+    @Override public void clearContent() {
+        Arrays.fill(items,ItemStack.EMPTY);
+        Arrays.fill(credit,0);Arrays.fill(repairRates,0);Arrays.fill(soundProgress,0);
+        legacyCredit=null;
+        lastRepairTime=level==null?-1:level.getGameTime();savedAt=lastRepairTime;
+        visibleChanged();
+    }
     public void dropContents() {
         if(dropped||level==null||level.isClientSide) return;
         dropped=true;

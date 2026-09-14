@@ -60,7 +60,8 @@ public class FixtureBlock extends BaseEntityBlock {
     }
     @Override protected void onRemove(BlockState state,Level level,BlockPos pos,BlockState next,boolean moving) {
         if(!state.is(next.getBlock())) {
-            if(!level.isClientSide) {
+            // Moving blocks keep their saved inventory and paired half at the destination.
+            if(!level.isClientSide&&!moving) {
                 if(level.getBlockEntity(pos) instanceof FixtureBlockEntity fixture) fixture.dropContents();
                 if(kind.tall()) {
                     BlockPos other=state.getValue(HALF)==DoubleBlockHalf.LOWER?pos.above():pos.below();
